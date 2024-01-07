@@ -23,7 +23,6 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 06b36713e83b5e9468bb766ea4ecd0fe, type: 2}
     - {fileID: 11400000, guid: b6cd6df98c881444ebc0e486db6e7931, type: 2}
     - {fileID: 11400000, guid: 231675414d26fea4e83f6ef741003c2a, type: 2}
-    - {fileID: 11400000, guid: 1c67957093d56a449b8015294d6acf6d, type: 2}
     - {fileID: 11400000, guid: 0ae1127fc64d35441a46981a86297361, type: 2}
     - {fileID: 11400000, guid: bdbcb31d8bc6bb74186f550a0c155a07, type: 2}
     - {fileID: 11400000, guid: f0d07ff1c8dc465469740cad5f7fac17, type: 2}
@@ -401,7 +400,6 @@ MonoBehaviour:
       - 08
     - Category: Basic1
       Names:
-      - 01
       - 02
       - 03
       - 04
