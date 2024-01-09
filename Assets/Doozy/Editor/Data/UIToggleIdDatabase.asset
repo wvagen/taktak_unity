@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ccf9294157d4eff8294a3c67883318a, type: 3}
-  m_Name: ReactorSettings
+  m_Script: {fileID: 11500000, guid: 53e6f219fa644a7786ed1c73b8871899, type: 3}
+  m_Name: UIToggleIdDatabase
   m_EditorClassIdentifier: 
-  EditorFPS: 90
-  CustomEditorFPS: 20
-  RuntimeFPS: 90
-  CustomRuntimeFPS: 20
+  Database:
+    Items: []
