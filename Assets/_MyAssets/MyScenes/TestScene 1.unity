@@ -463,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77c6d918500348269ab48ea9646e337b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EnableCalled: 0
   m_Navigation:
     m_Mode: 3
     m_WrapAround: 0
@@ -472,18 +473,34 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 0
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_NormalColor:
+      r: 1
+      g: 1
+      b: 1
+      a: 1
+    m_HighlightedColor:
+      r: 0.9607843
+      g: 0.9607843
+      b: 0.9607843
+      a: 1
+    m_PressedColor:
+      r: 0.78431374
+      g: 0.78431374
+      b: 0.78431374
+      a: 1
+    m_SelectedColor:
+      r: 0.9607843
+      g: 0.9607843
+      b: 0.9607843
+      a: 1
+    m_DisabledColor:
+      r: 0.78431374
+      g: 0.78431374
+      b: 0.78431374
+      a: 0.5019608
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+  m_SpriteState: {m_HighlightedSprite: {fileID: 0}, m_PressedSprite: {fileID: 0}, m_SelectedSprite: {fileID: 0}, m_DisabledSprite: {fileID: 0}}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -492,13 +509,20 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
+  m_GroupsAllowInteraction: 1
+  m_CurrentIndex: -1
+  <isPointerInside>k__BackingField: 0
+  <isPointerDown>k__BackingField: 0
+  <hasSelection>k__BackingField: 0
   MultiplayerInfo: {fileID: 0}
   IsOn: 0
+  m_RectTransform: {fileID: 1562540750}
   CurrentUISelectionState: 0
   DeselectAfterPress: 1
   OnSelectionStateChangedCallback:
     m_PersistentCalls:
       m_Calls: []
+    m_CallsDirty: 1
   CurrentStateName: Normal
   NormalState:
     StateType: 0
@@ -508,6 +532,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
   HighlightedState:
     StateType: 1
     StateEvent:
@@ -516,6 +541,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
   PressedState:
     StateType: 2
     StateEvent:
@@ -524,6 +550,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
   SelectedState:
     StateType: 3
     StateEvent:
@@ -532,6 +559,7 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
   DisabledState:
     StateType: 4
     StateEvent:
@@ -540,12 +568,15 @@ MonoBehaviour:
       Event:
         m_PersistentCalls:
           m_Calls: []
+        m_CallsDirty: 1
   Behaviours:
     Behaviours: []
     SignalSource: {fileID: 1562540749}
     Selectable: {fileID: 1562540751}
   Cooldown: 0
   DisableWhenInCooldown: 0
+  <inCooldown>k__BackingField: 0
+  <selectableInitialized>k__BackingField: 1
   Id:
     Category: None
     Name: None
@@ -562,30 +593,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca817101ee6c409fb4e92db226cd172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
   Controller: {fileID: 1562540751}
+  <isConnected>k__BackingField: 0
+  <animatorInitialized>k__BackingField: 0
   IsOn: 0
   ToggleCommand: 0
+  m_CanvasGroup: {fileID: 0}
   NormalAnimation:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <rectTransform>k__BackingField: {fileID: 0}
+    <canvasGroup>k__BackingField: {fileID: 0}
     AnimationType: 5
     Move:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -593,8 +638,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -616,22 +660,61 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      UseCustomLocalScale: 0
+      CustomFromLocalScale: {x: 1, y: 1, z: 1}
+      CustomToLocalScale: {x: 1, y: 1, z: 1}
+      UseCustomLocalRotation: 0
+      CustomFromLocalRotation: {x: 0, y: 0, z: 0}
+      CustomToLocalRotation: {x: 0, y: 0, z: 0}
       Enabled: 1
       AnimationType: 5
       StartPosition: {x: 0, y: 0, z: 0}
@@ -644,15 +727,15 @@ MonoBehaviour:
       FromDirection: 0
       ToDirection: 0
     Rotate:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -660,8 +743,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -683,22 +765,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 1
@@ -708,15 +823,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -724,8 +839,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -747,22 +861,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 1, y: 1, z: 1}
       CurrentValue: {x: 1.1, y: 1.1, z: 1}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 1
@@ -772,15 +919,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Fade:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -788,8 +935,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -811,22 +957,56 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: 1
       ToValue: 1
       CurrentValue: 1
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      <canvasGroup>k__BackingField: {fileID: 0}
       Enabled: 1
       StartAlpha: 1
       FromReferenceValue: 1
@@ -839,23 +1019,33 @@ MonoBehaviour:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <rectTransform>k__BackingField: {fileID: 0}
+    <canvasGroup>k__BackingField: {fileID: 0}
     AnimationType: 6
     Move:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 1
         EaseMode: 0
         Ease: 4
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -863,8 +1053,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -886,22 +1075,61 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 2, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      UseCustomLocalScale: 0
+      CustomFromLocalScale: {x: 1, y: 1, z: 1}
+      CustomToLocalScale: {x: 1, y: 1, z: 1}
+      UseCustomLocalRotation: 0
+      CustomFromLocalRotation: {x: 0, y: 0, z: 0}
+      CustomToLocalRotation: {x: 0, y: 0, z: 0}
       Enabled: 0
       AnimationType: 6
       StartPosition: {x: 0, y: 0, z: 0}
@@ -914,15 +1142,15 @@ MonoBehaviour:
       FromDirection: 0
       ToDirection: 0
     Rotate:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -930,8 +1158,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -953,22 +1180,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: -0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 0
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 1
@@ -978,15 +1238,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 27
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -994,8 +1254,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1017,22 +1276,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 1.2, y: 1.2, z: 1}
       CurrentValue: {x: 1.3000001, y: 1.3000001, z: 1}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 1
@@ -1042,15 +1334,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0.2, y: 0.2, z: 0}
     Fade:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1058,8 +1350,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1081,22 +1372,56 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: 1
       ToValue: 1
       CurrentValue: 1
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      <canvasGroup>k__BackingField: {fileID: 0}
       Enabled: 0
       StartAlpha: 1
       FromReferenceValue: 1
@@ -1109,23 +1434,33 @@ MonoBehaviour:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <rectTransform>k__BackingField: {fileID: 0}
+    <canvasGroup>k__BackingField: {fileID: 0}
     AnimationType: 6
     Move:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 1
         EaseMode: 0
         Ease: 21
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1133,8 +1468,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1156,22 +1490,61 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 8, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      UseCustomLocalScale: 0
+      CustomFromLocalScale: {x: 1, y: 1, z: 1}
+      CustomToLocalScale: {x: 1, y: 1, z: 1}
+      UseCustomLocalRotation: 0
+      CustomFromLocalRotation: {x: 0, y: 0, z: 0}
+      CustomToLocalRotation: {x: 0, y: 0, z: 0}
       Enabled: 0
       AnimationType: 6
       StartPosition: {x: 0, y: 0, z: 0}
@@ -1184,15 +1557,15 @@ MonoBehaviour:
       FromDirection: 0
       ToDirection: 0
     Rotate:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1200,8 +1573,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1223,22 +1595,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: -0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 0
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 1
@@ -1248,15 +1653,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 27
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1264,8 +1669,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1287,22 +1691,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 0.9, y: 0.9, z: 1}
       CurrentValue: {x: 1.0209981, y: 1.0209981, z: 1}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 0
@@ -1312,15 +1749,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: -0.1, y: -0.1, z: 0}
     Fade:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1328,8 +1765,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1351,22 +1787,56 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: 1
       ToValue: 1
       CurrentValue: 1
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      <canvasGroup>k__BackingField: {fileID: 0}
       Enabled: 0
       StartAlpha: 1
       FromReferenceValue: 1
@@ -1379,23 +1849,33 @@ MonoBehaviour:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <rectTransform>k__BackingField: {fileID: 0}
+    <canvasGroup>k__BackingField: {fileID: 0}
     AnimationType: 4
     Move:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 1
         EaseMode: 0
         Ease: 4
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1403,8 +1883,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1426,22 +1905,61 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 2, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      UseCustomLocalScale: 0
+      CustomFromLocalScale: {x: 1, y: 1, z: 1}
+      CustomToLocalScale: {x: 1, y: 1, z: 1}
+      UseCustomLocalRotation: 0
+      CustomFromLocalRotation: {x: 0, y: 0, z: 0}
+      CustomToLocalRotation: {x: 0, y: 0, z: 0}
       Enabled: 0
       AnimationType: 4
       StartPosition: {x: 0, y: 0, z: 0}
@@ -1454,15 +1972,15 @@ MonoBehaviour:
       FromDirection: 0
       ToDirection: 0
     Rotate:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1470,8 +1988,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1493,22 +2010,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: -0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 0
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 1
@@ -1518,15 +2068,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 27
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1534,8 +2084,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1557,22 +2106,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 1.1, y: 1.1, z: 1}
       CurrentValue: {x: 1.2, y: 1.2, z: 1}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 1
@@ -1582,15 +2164,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0.1, y: 0.1, z: 0}
     Fade:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1598,8 +2180,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1621,22 +2202,56 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: 1
       ToValue: 1
       CurrentValue: 1
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      <canvasGroup>k__BackingField: {fileID: 0}
       Enabled: 0
       StartAlpha: 1
       FromReferenceValue: 1
@@ -1649,23 +2264,33 @@ MonoBehaviour:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <rectTransform>k__BackingField: {fileID: 0}
+    <canvasGroup>k__BackingField: {fileID: 0}
     AnimationType: 5
     Move:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1673,8 +2298,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1696,22 +2320,61 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      UseCustomLocalScale: 0
+      CustomFromLocalScale: {x: 1, y: 1, z: 1}
+      CustomToLocalScale: {x: 1, y: 1, z: 1}
+      UseCustomLocalRotation: 0
+      CustomFromLocalRotation: {x: 0, y: 0, z: 0}
+      CustomToLocalRotation: {x: 0, y: 0, z: 0}
       Enabled: 1
       AnimationType: 5
       StartPosition: {x: 0, y: 0, z: 0}
@@ -1724,15 +2387,15 @@ MonoBehaviour:
       FromDirection: 13
       ToDirection: 13
     Rotate:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1740,8 +2403,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1763,22 +2425,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: 0, y: 0, z: 0}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartRotation: {x: -0, y: 0, z: 0}
       FromReferenceValue: 1
@@ -1788,15 +2483,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Scale:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1804,8 +2499,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1827,22 +2521,55 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 1, y: 1, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
       Enabled: 1
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 1
@@ -1852,15 +2579,15 @@ MonoBehaviour:
       FromOffset: {x: 0, y: 0, z: 0}
       ToOffset: {x: 0, y: 0, z: 0}
     Fade:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -1868,8 +2595,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -1891,22 +2617,56 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 0
       FromValue: 1
       ToValue: 1
       CurrentValue: 1
+      <cycleValues>k__BackingField: []
+      <rectTransform>k__BackingField: {fileID: 0}
+      <canvasGroup>k__BackingField: {fileID: 0}
       Enabled: 1
       StartAlpha: 1
       FromReferenceValue: 1
@@ -1915,6 +2675,11 @@ MonoBehaviour:
       ToCustomValue: 0
       FromOffset: 0
       ToOffset: 0.4
+  <isInLayoutGroup>k__BackingField: 0
+  <localPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  <uiBehaviourHandler>k__BackingField: {fileID: 0}
+  <updateStartPositionInLateUpdate>k__BackingField: 0
+  <playStateAnimationFromLateUpdate>k__BackingField: 0
 --- !u!225 &1562540753
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2080,7 +2845,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58ada66bc16d42029748b4f1816dd657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_RectTransform: {fileID: 0}
   Controller: {fileID: 1562540751}
+  <isConnected>k__BackingField: 0
+  <animatorInitialized>k__BackingField: 0
   IsOn: 0
   ToggleCommand: 0
   ColorTarget: {fileID: 1947591776}
@@ -2088,22 +2856,31 @@ MonoBehaviour:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <colorTarget>k__BackingField: {fileID: 1947591776}
     Animation:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -2111,8 +2888,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -2134,28 +2910,85 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      ToValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      CurrentValue: {r: 0.9686275, g: 0.20784315, b: 0.39607847, a: 1}
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 1
+      FromValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      ToValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      CurrentValue:
+        r: 0.9686275
+        g: 0.20784315
+        b: 0.39607847
+        a: 1
+      <cycleValues>k__BackingField: []
+      <colorTarget>k__BackingField: {fileID: 1947591776}
       Enabled: 1
-      StartColor: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
+      StartColor:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
       FromReferenceValue: 1
       ToReferenceValue: 0
-      FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 1, a: 1}
+      FromCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      ToCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -2165,27 +2998,40 @@ MonoBehaviour:
       FromAlphaOffset: 0
       ToAlphaOffset: 0
     UseCustomStartValue: 0
-    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
+    CustomStartValue:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
   HighlightedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <colorTarget>k__BackingField: {fileID: 1947591776}
     Animation:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -2193,8 +3039,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -2216,28 +3061,85 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      ToValue: {r: 1, g: 1, b: 1, a: 1}
-      CurrentValue: {r: 0.9762466, g: 0.40022412, b: 0.53462934, a: 1}
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 1
+      FromValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      ToValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      CurrentValue:
+        r: 0.9762466
+        g: 0.40022412
+        b: 0.53462934
+        a: 1
+      <cycleValues>k__BackingField: []
+      <colorTarget>k__BackingField: {fileID: 1947591776}
       Enabled: 1
-      StartColor: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
+      StartColor:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
       FromReferenceValue: 1
       ToReferenceValue: 0
-      FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 1, a: 1}
+      FromCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      ToCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -2247,27 +3149,40 @@ MonoBehaviour:
       FromAlphaOffset: 0
       ToAlphaOffset: 0
     UseCustomStartValue: 0
-    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
+    CustomStartValue:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
   PressedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <colorTarget>k__BackingField: {fileID: 1947591776}
     Animation:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -2275,8 +3190,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -2298,28 +3212,85 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      ToValue: {r: 0.8686275, g: 0.8686275, b: 0.8686275, a: 1}
-      CurrentValue: {r: 0.93927187, g: 0.037198782, b: 0.24768251, a: 1}
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 1
+      FromValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      ToValue:
+        r: 0.8686275
+        g: 0.8686275
+        b: 0.8686275
+        a: 1
+      CurrentValue:
+        r: 0.93927187
+        g: 0.037198782
+        b: 0.24768251
+        a: 1
+      <cycleValues>k__BackingField: []
+      <colorTarget>k__BackingField: {fileID: 1947591776}
       Enabled: 1
-      StartColor: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
+      StartColor:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
       FromReferenceValue: 1
       ToReferenceValue: 0
-      FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 1, a: 1}
+      FromCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      ToCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -2329,27 +3300,40 @@ MonoBehaviour:
       FromAlphaOffset: 0
       ToAlphaOffset: 0
     UseCustomStartValue: 0
-    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
+    CustomStartValue:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
   SelectedAnimation:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <colorTarget>k__BackingField: {fileID: 1947591776}
     Animation:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -2357,8 +3341,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -2380,28 +3363,85 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      ToValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      CurrentValue: {r: 1, g: 0.17647064, b: 0.3686275, a: 1}
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 1
+      FromValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      ToValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      CurrentValue:
+        r: 1
+        g: 0.17647064
+        b: 0.3686275
+        a: 1
+      <cycleValues>k__BackingField: []
+      <colorTarget>k__BackingField: {fileID: 1947591776}
       Enabled: 1
-      StartColor: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
+      StartColor:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
       FromReferenceValue: 1
       ToReferenceValue: 0
-      FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 1, a: 1}
+      FromCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      ToCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -2411,27 +3451,40 @@ MonoBehaviour:
       FromAlphaOffset: 0
       ToAlphaOffset: 0
     UseCustomStartValue: 0
-    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
+    CustomStartValue:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
   DisabledAnimation:
     OnPlayCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnStopCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
     OnFinishCallback:
       m_PersistentCalls:
         m_Calls: []
+      m_CallsDirty: 1
+    <startedReactionsCount>k__BackingField: 0
+    <stoppedReactionsCount>k__BackingField: 0
+    <finishedReactionsCount>k__BackingField: 0
+    <onPlayInvoked>k__BackingField: 0
+    m_InfiniteLoopCount: 0
+    <colorTarget>k__BackingField: {fileID: 1947591776}
     Animation:
+      <state>k__BackingField: 0
+      <stateBeforePause>k__BackingField: 0
       Settings:
         PlayMode: 0
         EaseMode: 0
         Ease: 1
         Curve:
-          serializedVersion: 2
           m_Curve:
-          - serializedVersion: 3
-            time: 0
+          - time: 0
             value: 0
             inSlope: 0
             outSlope: 1
@@ -2439,8 +3492,7 @@ MonoBehaviour:
             weightedMode: 0
             inWeight: 0
             outWeight: 0
-          - serializedVersion: 3
-            time: 1
+          - time: 1
             value: 1
             inSlope: 1
             outSlope: 0
@@ -2462,28 +3514,85 @@ MonoBehaviour:
         RandomStartDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomDuration:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoops:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         RandomLoopDelay:
           MIN: 0
           MAX: 1
+          <currentValue>k__BackingField: 0
+          <previousValue>k__BackingField: 0
         Strength: 1
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
-      ToValue: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 0.5}
-      CurrentValue: {r: 0, g: 0, b: 0, a: 0}
+      m_LastProgress: 0
+      <direction>k__BackingField: 0
+      <startDelay>k__BackingField: 0
+      <elapsedStartDelay>k__BackingField: 0
+      <duration>k__BackingField: 0
+      <elapsedDuration>k__BackingField: 0
+      <startDuration>k__BackingField: 0
+      <targetDuration>k__BackingField: 0
+      <customStartDuration>k__BackingField: 0
+      <loops>k__BackingField: 0
+      <elapsedLoops>k__BackingField: 0
+      <loopDelay>k__BackingField: 0
+      <elapsedLoopDelay>k__BackingField: 0
+      <cycleDurations>k__BackingField: []
+      <numberOfCycles>k__BackingField: 0
+      <previousCycleIndex>k__BackingField: 0
+      <currentCycleIndex>k__BackingField: 0
+      <hasObjectId>k__BackingField: 0
+      <stringId>k__BackingField: 
+      <hasStringId>k__BackingField: 0
+      <intId>k__BackingField: 0
+      <hasIntId>k__BackingField: 0
+      <hasTargetObject>k__BackingField: 1
+      FromValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
+      ToValue:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 0.5
+      CurrentValue:
+        r: 0
+        g: 0
+        b: 0
+        a: 0
+      <cycleValues>k__BackingField: []
+      <colorTarget>k__BackingField: {fileID: 1947591776}
       Enabled: 1
-      StartColor: {r: 0.9686275, g: 0.9686275, b: 0.9686275, a: 1}
+      StartColor:
+        r: 0.9686275
+        g: 0.9686275
+        b: 0.9686275
+        a: 1
       FromReferenceValue: 1
       ToReferenceValue: 0
-      FromCustomValue: {r: 1, g: 1, b: 1, a: 1}
-      ToCustomValue: {r: 1, g: 1, b: 1, a: 1}
+      FromCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
+      ToCustomValue:
+        r: 1
+        g: 1
+        b: 1
+        a: 1
       FromHueOffset: 0
       ToHueOffset: 0
       FromSaturationOffset: 0
@@ -2493,7 +3602,11 @@ MonoBehaviour:
       FromAlphaOffset: 0
       ToAlphaOffset: -0.5
     UseCustomStartValue: 0
-    CustomStartValue: {r: 0, g: 0, b: 0, a: 0}
+    CustomStartValue:
+      r: 0
+      g: 0
+      b: 0
+      a: 0
 --- !u!114 &1947591776
 MonoBehaviour:
   m_ObjectHideFlags: 0

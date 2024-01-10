@@ -1,14 +1,27 @@
 using System;
 using Newtonsoft.Json;
+using Postgrest.Attributes;
 using Postgrest.Models;
 
+[Table("user_id_map")]
 public class UserIdMap: BaseModel
 {
+    [PrimaryKey("id", false)]
     public long Id { get; set; }
+
+    [Column("user_cred")]
     public string UserCred { get; set; }
+
+    [Column("user_id")]
     public string UserId { get; set; }
+
+    [Column("user_type")]
     public string UserType { get; set; }
+
+    [Column("created_at")]
     public DateTime CreatedAt { get; set; } = DateTime.Now;
+
+    [Column("upadted_at")]
     public DateTime? UpdatedAt { get; set; } = null;
 
     [JsonIgnore]

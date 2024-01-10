@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Supabase;
 
 public class UserIdMapController
 {
-
     public async Task<List<UserIdMap>> GetAllUserIdMaps()
     {
-        var response = await SB_Client.Instance()
+        var response = await SB_Client.Instance().Result
             .From<UserIdMap>()
             .Select("*")
             .Get();
@@ -18,42 +16,34 @@ public class UserIdMapController
 
     public async Task<UserIdMap> GetUserIdMapById(long id)
     {
-        var response = await _supabaseClient
+        var response = await SB_Client.Instance().Result
             .From<UserIdMap>()
-            .Match(id)
+            .Where(user => user.Id == id)
             .Select("*")
-            .GetSingleAsync();
+            .Get();
 
-        return response.Data;
+        return response.Model;
     }
 
     public async Task<UserIdMap> CreateUserIdMap(UserIdMap userIdMap)
     {
-        var response = await _supabaseClient
+        var response = await SB_Client.Instance().Result
             .From<UserIdMap>()
-            .UpSert(userIdMap)
-            .GetSingleAsync();
+            .Insert(userIdMap);
 
-        return response.Data;
+        return response.Model;
     }
 
     public async Task<UserIdMap> UpdateUserIdMap(UserIdMap userIdMap)
     {
-        var response = await _supabaseClient
+        var model = await SB_Client.Instance().Result
             .From<UserIdMap>()
-            .UpSert(userIdMap)
-            .GetSingleAsync();
+            .Where(user => user.Id == userIdMap.Id)
+            .Single();
 
-        return response.Data;
-    }
+        model = userIdMap;
+        var response = await model.Update<UserIdMap>();
 
-    public async Task<bool> DeleteUserIdMap(long id)
-    {
-        var response = await _supabaseClient
-            .From<UserIdMap>()
-            .Match(id)
-            .DeleteAsync();
-
-        return response.Status == 200;
+        return response.Model;
     }
 }
