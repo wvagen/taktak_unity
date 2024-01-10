@@ -13,4 +13,16 @@ MonoBehaviour:
   m_Name: UIToggleIdDatabase
   m_EditorClassIdentifier: 
   Database:
-    Items: []
+    Items:
+    - Category: Home
+      Name: HistoryandStats
+    - Category: Home
+      Name: LiveMission
+    - Category: Home
+      Name: Mission
+    - Category: Home
+      Name: Profile
+    - Category: Home
+      Name: Shop
+    - Category: None
+      Name: None

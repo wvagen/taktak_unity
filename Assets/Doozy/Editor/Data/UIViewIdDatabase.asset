@@ -14,13 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Database:
     Items:
-    - Category: Demo
-      Name: EditProfile
-    - Category: Demo
-      Name: MainMenu
-    - Category: Demo
-      Name: Settings
     - Category: Home
-      Name: Menu
+      Name: HistoryAndStats
+    - Category: Home
+      Name: LiveMission
+    - Category: Home
+      Name: Mission
+    - Category: Home
+      Name: Profile
+    - Category: Home
+      Name: Shop
     - Category: None
       Name: None

@@ -14,10 +14,6 @@ namespace Doozy.Runtime.UIManager.Containers
 {
     public partial class UIView
     {
-        public static IEnumerable<UIView> GetViews(UIViewId.Demo id) => GetViews(nameof(UIViewId.Demo), id.ToString());
-        public static void Show(UIViewId.Demo id, bool instant = false) => Show(nameof(UIViewId.Demo), id.ToString(), instant);
-        public static void Hide(UIViewId.Demo id, bool instant = false) => Hide(nameof(UIViewId.Demo), id.ToString(), instant);
-
         public static IEnumerable<UIView> GetViews(UIViewId.Home id) => GetViews(nameof(UIViewId.Home), id.ToString());
         public static void Show(UIViewId.Home id, bool instant = false) => Show(nameof(UIViewId.Home), id.ToString(), instant);
         public static void Hide(UIViewId.Home id, bool instant = false) => Hide(nameof(UIViewId.Home), id.ToString(), instant);
@@ -28,16 +24,13 @@ namespace Doozy.Runtime.UIManager
 {
     public partial class UIViewId
     {
-        public enum Demo
-        {
-            EditProfile,
-            MainMenu,
-            Settings
-        }
-
         public enum Home
         {
-            Menu
+            HistoryAndStats,
+            LiveMission,
+            Mission,
+            Profile,
+            Shop
         }    
     }
 }
