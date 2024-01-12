@@ -4,9 +4,20 @@ using System.Threading.Tasks;
 
 public class UserIdMapController
 {
+    static UserIdMapController _instance;
+
+    public static UserIdMapController Instance()
+    {
+        if (_instance == null)
+        {
+            _instance = new UserIdMapController();
+        }
+        return _instance;
+    }
+
     public async Task<List<UserIdMap>> GetAllUserIdMaps()
     {
-        var response = await SB_Client.Instance().Result
+        var response = await SB_Client.Instance()
             .From<UserIdMap>()
             .Select("*")
             .Get();
@@ -16,7 +27,7 @@ public class UserIdMapController
 
     public async Task<UserIdMap> GetUserIdMapById(long id)
     {
-        var response = await SB_Client.Instance().Result
+        var response = await SB_Client.Instance()
             .From<UserIdMap>()
             .Where(user => user.Id == id)
             .Select("*")
@@ -27,7 +38,7 @@ public class UserIdMapController
 
     public async Task<UserIdMap> CreateUserIdMap(UserIdMap userIdMap)
     {
-        var response = await SB_Client.Instance().Result
+        var response = await SB_Client.Instance()
             .From<UserIdMap>()
             .Insert(userIdMap);
 
@@ -36,7 +47,7 @@ public class UserIdMapController
 
     public async Task<UserIdMap> UpdateUserIdMap(UserIdMap userIdMap)
     {
-        var model = await SB_Client.Instance().Result
+        var model = await SB_Client.Instance()
             .From<UserIdMap>()
             .Where(user => user.Id == userIdMap.Id)
             .Single();
