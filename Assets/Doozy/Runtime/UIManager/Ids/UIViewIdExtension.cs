@@ -14,6 +14,10 @@ namespace Doozy.Runtime.UIManager.Containers
 {
     public partial class UIView
     {
+        public static IEnumerable<UIView> GetViews(UIViewId.Auth id) => GetViews(nameof(UIViewId.Auth), id.ToString());
+        public static void Show(UIViewId.Auth id, bool instant = false) => Show(nameof(UIViewId.Auth), id.ToString(), instant);
+        public static void Hide(UIViewId.Auth id, bool instant = false) => Hide(nameof(UIViewId.Auth), id.ToString(), instant);
+
         public static IEnumerable<UIView> GetViews(UIViewId.Home id) => GetViews(nameof(UIViewId.Home), id.ToString());
         public static void Show(UIViewId.Home id, bool instant = false) => Show(nameof(UIViewId.Home), id.ToString(), instant);
         public static void Hide(UIViewId.Home id, bool instant = false) => Hide(nameof(UIViewId.Home), id.ToString(), instant);
@@ -24,6 +28,12 @@ namespace Doozy.Runtime.UIManager
 {
     public partial class UIViewId
     {
+        public enum Auth
+        {
+            SignInEmail,
+            SignInOptions
+        }
+
         public enum Home
         {
             HistoryAndStats,
