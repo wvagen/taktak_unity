@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -154,7 +154,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 907922535}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -293,7 +292,6 @@ RectTransform:
   m_Children:
   - {fileID: 838790512}
   m_Father: {fileID: 316695639}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -377,12 +375,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: -1080, y: 0.17883301, z: 0}
-      ToValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      CurrentValue: {x: 0.15179443, y: 0.17883301, z: 0}
+      FromValue: {x: -1094.3688, y: 1420, z: 0}
+      ToValue: {x: -1824, y: 1420, z: 0}
+      CurrentValue: {x: -1824, y: 1420, z: 0}
       Enabled: 1
       AnimationType: 0
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: -1824, y: 1420, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -647,12 +645,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      ToValue: {x: 1080, y: 0.17883301, z: 0}
+      FromValue: {x: -1824, y: 1420, z: 0}
+      ToValue: {x: 1094.3688, y: 1420, z: 0}
       CurrentValue: {x: 1080, y: 0.17883301, z: 0}
       Enabled: 1
       AnimationType: 1
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: -1824, y: 1420, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -912,7 +910,7 @@ MonoBehaviour:
   Id:
     Category: Demo
     Name: Settings
-    Custom: 0
+    Custom: 1
   TargetOrientation: 0
 --- !u!114 &105734814
 MonoBehaviour:
@@ -960,7 +958,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -997,7 +997,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2085591190}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1514,7 +1513,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 946957699}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2074,7 +2072,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2094,7 +2094,6 @@ RectTransform:
   - {fileID: 105734811}
   - {fileID: 332574968}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2136,11 +2135,10 @@ RectTransform:
   m_Children:
   - {fileID: 347761821}
   m_Father: {fileID: 316695639}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1553, y: -1582.0001}
+  m_AnchoredPosition: {x: -1553, y: -1582}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332574969
@@ -2220,12 +2218,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: -1080, y: 0.17883301, z: 0}
-      ToValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      CurrentValue: {x: 0.15179443, y: 0.17883301, z: 0}
+      FromValue: {x: -1094.3688, y: -1582, z: 0}
+      ToValue: {x: -1553, y: -1582, z: 0}
+      CurrentValue: {x: -1553, y: -1582, z: 0}
       Enabled: 1
       AnimationType: 0
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: -1553, y: -1582, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -2490,12 +2488,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      ToValue: {x: 1080, y: 0.17883301, z: 0}
-      CurrentValue: {x: 1080, y: 0.17883301, z: 0}
+      FromValue: {x: -1553, y: -1582, z: 0}
+      ToValue: {x: 1094.3688, y: -1582, z: 0}
+      CurrentValue: {x: 1094.3688, y: -1582, z: 0}
       Enabled: 1
       AnimationType: 1
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: -1553, y: -1582, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -2755,7 +2753,7 @@ MonoBehaviour:
   Id:
     Category: Demo
     Name: EditProfile
-    Custom: 0
+    Custom: 1
   TargetOrientation: 0
 --- !u!114 &332574971
 MonoBehaviour:
@@ -2803,7 +2801,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -2840,7 +2840,6 @@ RectTransform:
   - {fileID: 1031399818}
   - {fileID: 1941999150}
   m_Father: {fileID: 332574968}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2920,7 +2919,6 @@ RectTransform:
   m_Children:
   - {fileID: 907922535}
   m_Father: {fileID: 316695639}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3004,12 +3002,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: -1080, y: 0.17883301, z: 0}
-      ToValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      CurrentValue: {x: 0.15179443, y: 0.17883301, z: 0}
+      FromValue: {x: -1094.3688, y: 568, z: 0}
+      ToValue: {x: 1548, y: 568, z: 0}
+      CurrentValue: {x: 1548, y: 568, z: 0}
       Enabled: 1
       AnimationType: 0
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: 1548, y: 568, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -3274,12 +3272,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 0.15179443, y: 0.17883301, z: 0}
-      ToValue: {x: 1080, y: 0.17883301, z: 0}
-      CurrentValue: {x: 1080, y: 0.17883301, z: 0}
+      FromValue: {x: 1548, y: 568, z: 0}
+      ToValue: {x: 1094.3688, y: 568, z: 0}
+      CurrentValue: {x: 1094.3688, y: 568, z: 0}
       Enabled: 1
       AnimationType: 1
-      StartPosition: {x: 0.15179443, y: 0.17883301, z: 0}
+      StartPosition: {x: 1548, y: 568, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -3539,7 +3537,7 @@ MonoBehaviour:
   Id:
     Category: Demo
     Name: MainMenu
-    Custom: 0
+    Custom: 1
   TargetOrientation: 0
 --- !u!114 &528788434
 MonoBehaviour:
@@ -3587,7 +3585,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -3622,7 +3622,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 946957699}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3759,7 +3758,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1941999150}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4274,7 +4272,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2085591190}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4412,7 +4409,6 @@ RectTransform:
   - {fileID: 2086021425}
   - {fileID: 2085591190}
   m_Father: {fileID: 105734811}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4490,7 +4486,6 @@ RectTransform:
   - {fileID: 102715172}
   - {fileID: 946957699}
   m_Father: {fileID: 528788431}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4569,7 +4564,6 @@ RectTransform:
   - {fileID: 206091959}
   - {fileID: 640322609}
   m_Father: {fileID: 907922535}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -6092,9 +6086,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -6128,13 +6130,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019472847}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031399817
 GameObject:
@@ -6167,7 +6169,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 347761821}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6331,13 +6332,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161662890}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1645735917
 GameObject:
@@ -6396,13 +6397,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645735917}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1714042311
 GameObject:
@@ -6437,7 +6438,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2086021425}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -6952,7 +6952,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1941999150}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -7090,7 +7089,6 @@ RectTransform:
   - {fileID: 757418334}
   - {fileID: 1789425747}
   m_Father: {fileID: 347761821}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -8604,7 +8602,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2086021425}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -8742,7 +8739,6 @@ RectTransform:
   - {fileID: 192907772}
   - {fileID: 771608323}
   m_Father: {fileID: 838790512}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -10259,7 +10255,6 @@ RectTransform:
   - {fileID: 1714042312}
   - {fileID: 2009534194}
   m_Father: {fileID: 838790512}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -11773,7 +11768,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 838790512}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -11877,3 +11871,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114049240}
   m_CullTransparentMesh: 1
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1019472850}
+  - {fileID: 316695639}
+  - {fileID: 1161662893}
+  - {fileID: 1645735919}

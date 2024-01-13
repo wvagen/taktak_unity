@@ -85,11 +85,11 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 399.50006, y: -10.999997}
+  Position: {x: 407.86957, y: -31.026098}
   OnEnterShowViews:
   - Id:
       Category: Auth
-      Name: SignInOptions
+      Name: SignInEmail
       Custom: 0
     Mode: 0
   OnEnterHideViews: []
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: AuthGraph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: 231, y: 93, z: 0}
+  EditorPosition: {x: 222.5, y: 120.5, z: 0}
   EditorScale: {x: 1.15, y: 1.15, z: 1}
   Id: 46251a49-e6af-470e-b227-18df1905f909
   GraphName: Flow Graph
@@ -193,11 +193,11 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 190, y: -10.999998}
+  Position: {x: 190.00002, y: -16.582615}
   OnEnterShowViews:
   - Id:
       Category: Auth
-      Name: SignInEmail
+      Name: SignInOptions
       Custom: 0
     Mode: 0
   OnEnterHideViews: []
@@ -205,7 +205,7 @@ MonoBehaviour:
   OnExitHideViews:
   - Id:
       Category: Auth
-      Name: SignInEmail
+      Name: SignInOptions
       Custom: 0
     Mode: 0
   OnEnterHideAllViews: 0

@@ -1,27 +1,30 @@
 using Supabase;
 
-public class SB_Client
+namespace com.mkadmi
 {
-    static Client _supabaseClient;
-
-    public static Client Instance()
+    public class SB_Client
     {
-        if (_supabaseClient == null)
+        static Client _supabaseClient;
+
+        public static Client Instance()
         {
-            var url = Config.MY_SUPABASE_URL;
-            var key = Config.MY_SUPABASE_KEY;
-
-            var options = new SupabaseOptions
+            if (_supabaseClient == null)
             {
-                AutoConnectRealtime = true,
-            };
+                var url = Config.MY_SUPABASE_URL;
+                var key = Config.MY_SUPABASE_KEY;
 
-            _supabaseClient = new Client(url, key, options);
-            _supabaseClient.InitializeAsync();
+                var options = new SupabaseOptions
+                {
+                    AutoConnectRealtime = true,
+                };
+
+                _supabaseClient = new Client(url, key, options);
+                _supabaseClient.InitializeAsync();
+            }
+
+            return _supabaseClient;
         }
 
-        return _supabaseClient;
+
     }
-
-
 }

@@ -27,6 +27,16 @@ MonoBehaviour:
       - Jouer
       Flags: 00000000
       Languages_Touch: []
+    - Term: Button_Round07
+      TermType: 5
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

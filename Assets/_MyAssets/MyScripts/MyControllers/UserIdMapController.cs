@@ -2,59 +2,62 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public class UserIdMapController
+namespace com.mkadmi
 {
-    static UserIdMapController _instance;
-
-    public static UserIdMapController Instance()
+    public class UserIdMapController
     {
-        if (_instance == null)
+        static UserIdMapController _instance;
+
+        public static UserIdMapController Instance()
         {
-            _instance = new UserIdMapController();
+            if (_instance == null)
+            {
+                _instance = new UserIdMapController();
+            }
+            return _instance;
         }
-        return _instance;
-    }
 
-    public async Task<List<UserIdMap>> GetAllUserIdMaps()
-    {
-        var response = await SB_Client.Instance()
-            .From<UserIdMap>()
-            .Select("*")
-            .Get();
+        public async Task<List<UserIdMap>> GetAllUserIdMaps()
+        {
+            var response = await SB_Client.Instance()
+                .From<UserIdMap>()
+                .Select("*")
+                .Get();
 
-        return response.Models;
-    }
+            return response.Models;
+        }
 
-    public async Task<UserIdMap> GetUserIdMapById(long id)
-    {
-        var response = await SB_Client.Instance()
-            .From<UserIdMap>()
-            .Where(user => user.Id == id)
-            .Select("*")
-            .Get();
+        public async Task<UserIdMap> GetUserIdMapById(long id)
+        {
+            var response = await SB_Client.Instance()
+                .From<UserIdMap>()
+                .Where(user => user.Id == id)
+                .Select("*")
+                .Get();
 
-        return response.Model;
-    }
+            return response.Model;
+        }
 
-    public async Task<UserIdMap> CreateUserIdMap(UserIdMap userIdMap)
-    {
-        var response = await SB_Client.Instance()
-            .From<UserIdMap>()
-            .Insert(userIdMap);
+        public async Task<UserIdMap> CreateUserIdMap(UserIdMap userIdMap)
+        {
+            var response = await SB_Client.Instance()
+                .From<UserIdMap>()
+                .Insert(userIdMap);
 
-        return response.Model;
-    }
+            return response.Model;
+        }
 
-    public async Task<UserIdMap> UpdateUserIdMap(UserIdMap userIdMap)
-    {
-        var model = await SB_Client.Instance()
-            .From<UserIdMap>()
-            .Where(user => user.Id == userIdMap.Id)
-            .Single();
+        public async Task<UserIdMap> UpdateUserIdMap(UserIdMap userIdMap)
+        {
+            var model = await SB_Client.Instance()
+                .From<UserIdMap>()
+                .Where(user => user.Id == userIdMap.Id)
+                .Single();
 
-        model = userIdMap;
-        var response = await model.Update<UserIdMap>();
+            model = userIdMap;
+            var response = await model.Update<UserIdMap>();
 
-        return response.Model;
+            return response.Model;
+        }
     }
 }

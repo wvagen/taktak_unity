@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+namespace com.mkadmi
 {
-
-    public async void FetchUsers()
+    public class TestScript : MonoBehaviour
     {
-        List<UserIdMap> users = await UserIdMapController.Instance().GetAllUserIdMaps();
 
-        foreach(UserIdMap user in users)
+        public async void FetchUsers()
         {
-            Debug.Log(user.ToJson().ToString());
+            List<UserIdMap> users = await UserIdMapController.Instance().GetAllUserIdMaps();
+
+            foreach (UserIdMap user in users)
+            {
+                Debug.Log(user.ToJson().ToString());
+            }
         }
     }
 }
