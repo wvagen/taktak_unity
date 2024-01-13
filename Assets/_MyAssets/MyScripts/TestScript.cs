@@ -6,6 +6,8 @@ namespace com.mkadmi
 {
     public class TestScript : MonoBehaviour
     {
+        public bool canShowUsersInfo = false;
+
 
         public async void FetchUsers()
         {
@@ -16,5 +18,15 @@ namespace com.mkadmi
                 Debug.Log(user.ToJson().ToString());
             }
         }
+
+        private void Update()
+        {
+            if (canShowUsersInfo)
+            {
+                canShowUsersInfo = false;
+                Debug.Log(User.Instance().ToJson());
+            }
+        }
+
     }
 }

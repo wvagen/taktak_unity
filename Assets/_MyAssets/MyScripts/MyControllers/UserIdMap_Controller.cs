@@ -27,6 +27,16 @@ namespace com.mkadmi
             return response.Models;
         }
 
+        public async Task<UserIdMap_Model> GetUserByUserCredential(string userCred)
+        {
+            var response = await SB_Client.Instance()
+                .From<UserIdMap_Model>()
+                .Where(user => user.UserCred == userCred)
+                .Get();
+
+            return response.Model;
+        }
+
         public async Task<UserIdMap_Model> GetUserIdMapById(long id)
         {
             var response = await SB_Client.Instance()

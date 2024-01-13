@@ -11,10 +11,13 @@ namespace com.mkadmi {
         [SerializeField]
         private TMP_InputField _passField;
 
-        public async void SignIn()
+        public async void SignIn_Email()
         {
-            var session = await SB_Client.Instance().Auth.SignIn(_emailField.text, _passField.text);
-            Debug.Log(session);
+            Supabase.Gotrue.Session session = await SB_Client.Instance().Auth.SignIn(_emailField.text, _passField.text);
+            Debug.Log(session.User);
+            UserIdMap_Model user = await UserIdMap_Controller.Instance().GetUserByUserCredential(session.User.Email);
+
+            Debug.Log(user.ToJson());
         }
 
     }
