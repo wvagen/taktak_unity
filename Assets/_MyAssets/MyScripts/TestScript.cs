@@ -9,9 +9,9 @@ namespace com.mkadmi
 
         public async void FetchUsers()
         {
-            List<UserIdMap> users = await UserIdMapController.Instance().GetAllUserIdMaps();
+            List<UserIdMap_Model> users = await UserIdMap_Controller.Instance().GetAllUserIdMaps();
 
-            foreach (UserIdMap user in users)
+            foreach (UserIdMap_Model user in users)
             {
                 Debug.Log(user.ToJson().ToString());
             }
