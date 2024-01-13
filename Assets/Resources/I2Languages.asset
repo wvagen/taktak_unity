@@ -23,7 +23,7 @@ MonoBehaviour:
       Languages:
       - Play
       - "\u0646\u0644\u0639\u0628\u0644\u0648"
-      - "\u0646\u0644\u0639\u0628\u0644\u0648\u0627"
+      - "\u0645\u0639\u0627\u0638"
       - Jouer
       Flags: 00000000
       Languages_Touch: []
@@ -35,6 +35,78 @@ MonoBehaviour:
       - 
       - 
       - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: Simple Button
+      TermType: 4
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: Fetch Users
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: LiberationSans SDF
+      TermType: 9
+      Description: 
+      Languages:
+      - Bungee-Regular SDF
+      - ARIAL SDF
+      - ARIAL SDF
+      - Bungee-Regular SDF
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: Button_Round03_WhiteBg
+      TermType: 5
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: UnityWhite
+      TermType: 2
+      Description: 
+      Languages:
+      - Button_Round02_White_Bg
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: App_Name
+      TermType: 0
+      Description: 
+      Languages:
+      - 
+      - 
+      - 
+      - 
+      Flags: 00000000
+      Languages_Touch: []
+    - Term: Sign up using Email
+      TermType: 0
+      Description: 
+      Languages:
+      - Sign up using Email
+      - "\u0642\u0645 \u0628\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645
+        \u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+      - "\u0642\u0645 \u0628\u0627\u0644\u062A\u0633\u062C\u064A\u0644 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645
+        \u0627\u0644\u0628\u0631\u064A\u062F \u0627\u0644\u0625\u0644\u0643\u062A\u0631\u0648\u0646\u064A"
+      - Inscrivez-vous par e-mail
       Flags: 00000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -64,7 +136,9 @@ MonoBehaviour:
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateSynchronization: 1
     GoogleUpdateDelay: 0
-    Assets: []
+    Assets:
+    - {fileID: 11400000, guid: 2b3021157dc754275997b405382cb44b, type: 2}
+    - {fileID: 11400000, guid: c01a8efaf000a4604a3401af9a739226, type: 2}
     Spreadsheet_LocalFileName: 
     Spreadsheet_LocalCSVSeparator: ','
     Spreadsheet_LocalCSVEncoding: utf-8

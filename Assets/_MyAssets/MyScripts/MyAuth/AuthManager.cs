@@ -20,8 +20,8 @@ namespace com.mkadmi {
             User_Model user = await UserController.Instance().GetUserById(session.User.Id);
             Debug.Log(user.ToJson());
             User.Instance().SetMe(user);
-
             AlertCanvas.Instance().Loading(false);
+            AlertCanvas.Instance().Load_Scene(UserSettings.SCENE_MAIN_MENU);
         }
 
     }

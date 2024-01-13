@@ -7,7 +7,7 @@ namespace com.mkadmi
     public class TestScript : MonoBehaviour
     {
         public bool canShowUsersInfo = false;
-
+        public bool canChangeTheme = false;
 
         public async void FetchUsers()
         {
@@ -24,7 +24,17 @@ namespace com.mkadmi
             if (canShowUsersInfo)
             {
                 canShowUsersInfo = false;
+
                 Debug.Log(User.Instance().ToJson());
+                UserSettings.Instance().Log_User_Settings();
+            }
+            if (canChangeTheme)
+            {
+                canChangeTheme = false;
+                if (UserSettings.Instance().THEME_NAME == "dark")
+                UserSettings.Instance().Set_THEME_NAME("light");
+                else
+                    UserSettings.Instance().Set_THEME_NAME("dark");
             }
         }
 

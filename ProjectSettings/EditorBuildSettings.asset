@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_MyAssets/MyScenes/0_AuthScene.unity
     guid: c4226054a9cffdf41860cbcdb5636aad
+  - enabled: 1
+    path: Assets/_MyAssets/MyScenes/1_MainScene.unity
+    guid: 44522d11c9af74d0281400021aba70b7
   m_configObjects: {}
