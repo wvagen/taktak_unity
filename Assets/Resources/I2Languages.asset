@@ -61,10 +61,10 @@ MonoBehaviour:
       TermType: 9
       Description: 
       Languages:
-      - Bungee-Regular SDF
+      - Sen SDF
       - ARIAL SDF
       - ARIAL SDF
-      - Bungee-Regular SDF
+      - Sen SDF
       Flags: 00000000
       Languages_Touch: []
     - Term: Button_Round03_WhiteBg
