@@ -56,6 +56,11 @@ namespace com.mkadmi
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        public User_Model()
+        {
+
+        }
+
         public string ToJson()
         {
             return JsonConvert.SerializeObject(this);
