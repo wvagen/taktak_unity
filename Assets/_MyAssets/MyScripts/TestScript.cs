@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace com.mkadmi
@@ -11,6 +12,7 @@ namespace com.mkadmi
         public bool canChangeTheme = false;
         public bool canFetchFakeData = false;
         public bool canSpawnMissionLive = false;
+        public bool canGenerateFakeMissionData = false;
 
         public string Id ;
 
@@ -46,6 +48,14 @@ namespace com.mkadmi
         public int userLevelAmount;
         public float starsNote;
         public Sprite profilePic;
+        public List<Sprite> randomPics;
+
+        public string missionDesc;
+        public int rewardCoins;
+        public int expAmount;
+        public int committers;
+
+        public float timeSeconds = 10;
 
         private void Awake()
         {
@@ -103,8 +113,43 @@ namespace com.mkadmi
             {
                 canSpawnMissionLive = false;
                 MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
-                missionLive.SetMe(userName, userLevelAmount, starsNote, profilePic);
+                missionLive.Set_Profile(userName, userLevelAmount, starsNote, profilePic);
+                missionLive.Set_Timer(timeSeconds);
+                missionLive.Set_Mission_Props(missionDesc, rewardCoins, expAmount, committers);
             }
+            if (canGenerateFakeMissionData)
+            {
+                canGenerateFakeMissionData = false;
+                userName = GenerateRandomWord(5);
+                missionDesc = userName = GenerateRandomWord(25);
+                starsNote = UnityEngine.Random.Range(0, 5);
+                userLevelAmount = UnityEngine.Random.Range(0, 100);
+                rewardCoins = UnityEngine.Random.Range(10, 100);
+                expAmount = UnityEngine.Random.Range(10, 100);
+                committers = UnityEngine.Random.Range(0, 100);
+                timeSeconds = UnityEngine.Random.Range(10, 3600);
+                profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
+            }
+        }
+
+        static string GenerateRandomWord(int maxLength)
+        {
+            // Define the characters that can be used in the random word
+            const string allowedCharacters = "abcdefghijklmnopqrstuvwxyz0123456789 ";
+
+            // Initialize a StringBuilder to build the random word
+            StringBuilder randomWordBuilder = new StringBuilder();
+
+            // Generate random word
+            int length = UnityEngine.Random.Range(1, maxLength + 1);
+            for (int i = 0; i < length; i++)
+            {
+                // Append a random character from the allowedCharacters
+                randomWordBuilder.Append(allowedCharacters[UnityEngine.Random.Range(0, allowedCharacters.Length)]);
+            }
+
+            // Convert StringBuilder to string and return
+            return randomWordBuilder.ToString();
         }
 
     }

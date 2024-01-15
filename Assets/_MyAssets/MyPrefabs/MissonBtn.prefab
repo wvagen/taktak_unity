@@ -524,7 +524,7 @@ GameObject:
   - component: {fileID: 2154253602303136590}
   - component: {fileID: 3105065333777368277}
   m_Layer: 0
-  m_Name: Slider_Basic04_Orange
+  m_Name: Timer_Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,9 +597,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 100
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 79.8
+  m_Value: 0.907
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3834,6 +3834,13 @@ MonoBehaviour:
   _RewardExpTxt: {fileID: 5431783378989239866}
   _CommittersTxt: {fileID: 8037425132824056231}
   _MyUserWidget: {fileID: 3600470584726211499}
+  _TimeSlider: {fileID: 3105065333777368277}
+  _SliderFillImg: {fileID: 2317994540882071481}
+  _sliderColors:
+  - {r: 0.29360345, g: 1, b: 0.07075471, a: 1}
+  - {r: 1, g: 0.5193716, b: 0.07058823, a: 1}
+  - {r: 1, g: 0.07058823, b: 0.15774806, a: 1}
+  _sliderRemainingTimeTxt: {fileID: 1488822878715509869}
 --- !u!1 &4735545905897751965
 GameObject:
   m_ObjectHideFlags: 0
