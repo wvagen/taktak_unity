@@ -10,6 +10,7 @@ namespace com.mkadmi
         public bool canShowUsersInfo = false;
         public bool canChangeTheme = false;
         public bool canFetchFakeData = false;
+        public bool canSpawnMissionLive = false;
 
         public string Id ;
 
@@ -38,6 +39,13 @@ namespace com.mkadmi
         public float? Rating ;
 
         public short? ReportCount;
+
+        public GameObject missionLiveGO;
+        public Transform missionLiveLocation;
+        public string userName;
+        public int userLevelAmount;
+        public float starsNote;
+        public Sprite profilePic;
 
         private void Awake()
         {
@@ -90,6 +98,12 @@ namespace com.mkadmi
                 UserSettings.Instance().Set_THEME_NAME("light");
                 else
                     UserSettings.Instance().Set_THEME_NAME("dark");
+            }
+            if (canSpawnMissionLive)
+            {
+                canSpawnMissionLive = false;
+                MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
+                missionLive.SetMe(userName, userLevelAmount, starsNote, profilePic);
             }
         }
 

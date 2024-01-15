@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 3956527590074515773}
   - component: {fileID: 6045527675454861667}
   - component: {fileID: 1341336061681499149}
+  - component: {fileID: 3600470584726211499}
   m_Layer: 0
   m_Name: UserPanel
   m_TagString: Untagged
@@ -408,6 +409,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3600470584726211499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799041693471936837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ad179a6e5ff4fdc8ef3a602c2d5253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _UserNameTxt: {fileID: 1296482940287441608}
+  _UserLevelTxt: {fileID: 13200886483750515}
+  _StarsImgs:
+  - {fileID: 6177829332881301024}
+  - {fileID: 587153178998488025}
+  - {fileID: 6111477582650221273}
+  - {fileID: 4386428020823738035}
+  - {fileID: 7828178477448919051}
+  _ProfilePictureImg: {fileID: 458093482116528508}
 --- !u!1 &823826859605871142
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,7 +442,7 @@ GameObject:
   - component: {fileID: 1959047780762676266}
   - component: {fileID: 7391822392504696660}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: MissionDescTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1700,7 +1722,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1775,7 +1797,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1850,7 +1872,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -2077,7 +2099,7 @@ GameObject:
   - component: {fileID: 1904446392696822151}
   - component: {fileID: 13200886483750515}
   m_Layer: 0
-  m_Name: UserNametxt
+  m_Name: UserLevelTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2287,6 +2309,7 @@ GameObject:
   - component: {fileID: 4355416464641964937}
   - component: {fileID: 7723583450422921959}
   - component: {fileID: 2570223569636569143}
+  - component: {fileID: 1387976708978799412}
   m_Layer: 0
   m_Name: MissonBtn
   m_TagString: Untagged
@@ -3794,6 +3817,23 @@ MonoBehaviour:
       ToCustomValue: 0
       FromOffset: 0
       ToOffset: 0.4
+--- !u!114 &1387976708978799412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4461775304912790864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2209eecf33bfe4a7db390fd4b93d917b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _MissionDescription: {fileID: 7391822392504696660}
+  _RewardVirCoinsTxt: {fileID: 8304068531926806974}
+  _RewardExpTxt: {fileID: 5431783378989239866}
+  _CommittersTxt: {fileID: 8037425132824056231}
+  _MyUserWidget: {fileID: 3600470584726211499}
 --- !u!1 &4735545905897751965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,7 +3980,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -4370,7 +4410,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
