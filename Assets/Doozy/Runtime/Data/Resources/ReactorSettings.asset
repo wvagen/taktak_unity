@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorFPS: 90
   CustomEditorFPS: 20
-  RuntimeFPS: 120
+  RuntimeFPS: 90
   CustomRuntimeFPS: 20

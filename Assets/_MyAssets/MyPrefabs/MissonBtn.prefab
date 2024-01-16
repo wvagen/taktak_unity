@@ -2935,7 +2935,7 @@ MonoBehaviour:
       FromValue: {x: 1, y: 1, z: 1}
       ToValue: {x: 1.1, y: 1.1, z: 1}
       CurrentValue: {x: 1.1, y: 1.1, z: 1}
-      Enabled: 1
+      Enabled: 0
       StartScale: {x: 1, y: 1, z: 1}
       FromReferenceValue: 1
       ToReferenceValue: 0
@@ -3829,10 +3829,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2209eecf33bfe4a7db390fd4b93d917b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _MissionDescription: {fileID: 7391822392504696660}
   _RewardVirCoinsTxt: {fileID: 8304068531926806974}
   _RewardExpTxt: {fileID: 5431783378989239866}
   _CommittersTxt: {fileID: 8037425132824056231}
+  _MissionDescription: {fileID: 7391822392504696660}
   _MyUserWidget: {fileID: 3600470584726211499}
   _TimeSlider: {fileID: 3105065333777368277}
   _SliderFillImg: {fileID: 2317994540882071481}
