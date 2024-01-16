@@ -57,6 +57,10 @@ namespace com.mkadmi
 
         public float timeSeconds = 10;
 
+        public string snackBarContent;
+        public int snackBarType;
+        public bool showSnackbar;
+
         private void Awake()
         {
             if (canFetchFakeData)
@@ -129,6 +133,12 @@ namespace com.mkadmi
                 committers = UnityEngine.Random.Range(0, 100);
                 timeSeconds = UnityEngine.Random.Range(10, 3600);
                 profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
+            }
+
+            if (showSnackbar)
+            {
+                showSnackbar = false;
+                FindAnyObjectByType<AlertCanvas>().Show_SnackBar(snackBarContent, snackBarType);
             }
         }
 

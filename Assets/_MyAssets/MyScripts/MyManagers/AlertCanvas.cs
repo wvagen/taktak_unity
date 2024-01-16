@@ -2,14 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using Doozy.Runtime.UIManager.Containers;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UPersian.Components;
 
 namespace com.mkadmi
 {
     public class AlertCanvas : MonoBehaviour
     {
+
+        class Custom_SnackBar
+        {
+            public int SnackBarType;
+            public string SnackBarContent;
+
+            public Custom_SnackBar(string SnackBarContent, int SnackBarType)
+            {
+                this.SnackBarType = SnackBarType;
+                this.SnackBarContent = SnackBarContent;
+            }
+        }
+
         [SerializeField]
         private UIContainer loadingPanel;
+
+        [SerializeField]
+        private UIContainer _SnackBar;
+        [SerializeField]
+        private Image _SnackBarBG;
+        [SerializeField]
+        private RtlText _SnackBarContent;
+        [SerializeField]
+        private List<Sprite> _SnackbarBGSparites;
+        [SerializeField]
+        private List<Custom_SnackBar> _SnackBarQueue = new List<Custom_SnackBar>();
+
 
         static AlertCanvas _instance = null;
 
@@ -36,6 +63,23 @@ namespace com.mkadmi
             else
             {
                 loadingPanel.Hide();
+            }
+        }
+
+        public void Show_SnackBar(string title, int type = 0)
+        {
+            _SnackBarQueue.Add(new Custom_SnackBar(title, type));
+            Play_SackBar_Anim();
+        }
+
+        public void Play_SackBar_Anim()
+        {
+            if (_SnackBarQueue.Count > 0 && _SnackBar.isHidden)
+            {
+                _SnackBarContent.text = _SnackBarQueue[0].SnackBarContent;
+                _SnackBarBG.sprite = _SnackbarBGSparites[_SnackBarQueue[0].SnackBarType];
+                _SnackBar.Show();
+                _SnackBarQueue.RemoveAt(0);
             }
         }
 
