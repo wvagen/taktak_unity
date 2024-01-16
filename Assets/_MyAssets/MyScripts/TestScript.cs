@@ -132,6 +132,24 @@ namespace com.mkadmi
             }
         }
 
+        public void GenerateRandomMission()
+        {
+            userName = GenerateRandomWord(5);
+            missionDesc = userName = GenerateRandomWord(25);
+            starsNote = UnityEngine.Random.Range(0, 5);
+            userLevelAmount = UnityEngine.Random.Range(0, 100);
+            rewardCoins = UnityEngine.Random.Range(10, 100);
+            expAmount = UnityEngine.Random.Range(10, 100);
+            committers = UnityEngine.Random.Range(0, 100);
+            timeSeconds = UnityEngine.Random.Range(10, 3600);
+            profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
+
+            MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
+            missionLive.Set_Profile(userName, userLevelAmount, starsNote, profilePic);
+            missionLive.Set_Timer(timeSeconds);
+            missionLive.Set_Mission_Props(missionDesc, rewardCoins, expAmount, committers);
+        }
+
         static string GenerateRandomWord(int maxLength)
         {
             // Define the characters that can be used in the random word
