@@ -32,16 +32,22 @@ namespace com.mkadmi
 
         public static void Fetch_User_Img(string path, Image imgRef)
         {
-            Sprite photoImg;
-            try {
+            //Sprite photoImg;
+            Texture2D loadingSpr, errorSpr;
+            loadingSpr = Resources.Load("MyDefaultSprites/loading") as Texture2D;
+            errorSpr = Resources.Load("MyDefaultSprites/error") as Texture2D;
+
+            try
+            {
                 string fullPath = SB_Client.Instance().Storage.From(UserSettings.USER_FILES_PATH).GetPublicUrl(path);
-                Davinci.get().load(fullPath).into(imgRef).start();
+                Davinci.get().load(fullPath).setLoadingPlaceholder(loadingSpr)
+                            .setErrorPlaceholder(errorSpr).into(imgRef).start();
                 //var bytes = await .Download(path, null);
                 //photoImg = BytesToSprite(bytes);
             }
             catch (Exception e)
             {
-                photoImg = Resources.Load("MyDefaultSprites/photo") as Sprite;
+                //photoImg = Resources.Load("MyDefaultSprites/photo") as Sprite;
                 Debug.LogError("Error: "+ e.Message + " on Path: " + path);
             }
             //return photoImg;
