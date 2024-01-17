@@ -14,7 +14,6 @@ namespace com.mkadmi {
         [SerializeField]
         private TextMeshProUGUI _virtualCoins;
 
-        // Start is called before the first frame update
         void Start()
         {
             Init();
@@ -28,10 +27,9 @@ namespace com.mkadmi {
 
         }
 
-        // Update is called once per frame
-        void Update()
+       public void SettingsBtn()
         {
-
+            AlertCanvas.Instance().Settings(true);
         }
     }
 }

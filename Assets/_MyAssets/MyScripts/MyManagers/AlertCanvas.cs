@@ -36,7 +36,8 @@ namespace com.mkadmi
         private List<Sprite> _SnackbarBGSparites;
         [SerializeField]
         private List<Custom_SnackBar> _SnackBarQueue = new List<Custom_SnackBar>();
-
+        [SerializeField]
+        private UIContainer _SettingsPanel;
 
         static AlertCanvas _instance = null;
 
@@ -81,6 +82,15 @@ namespace com.mkadmi
                 _SnackBar.Show();
                 _SnackBarQueue.RemoveAt(0);
             }
+        }
+
+        public void Settings(bool canShow = true)
+        {
+            if (canShow)
+                _SettingsPanel.Show();
+
+            else
+                _SettingsPanel.Hide();
         }
 
         public void Load_Scene(string sceneName)
