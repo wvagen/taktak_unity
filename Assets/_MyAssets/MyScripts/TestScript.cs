@@ -34,7 +34,7 @@ namespace com.mkadmi
 
         public long VirtualCoins ;
 
-        public double XpPoints ;
+        public ulong XpPoints ;
 
         public string Status ;
 
@@ -63,8 +63,24 @@ namespace com.mkadmi
 
         private void Awake()
         {
+            
+        }
+
+        public async void FetchUsers()
+        {
+            List<UserIdMap_Model> users = await UserIdMap_Controller.Instance().GetAllUserIdMaps();
+
+            foreach (UserIdMap_Model user in users)
+            {
+                Debug.Log(user.ToJson().ToString());
+            }
+        }
+
+        private void Update()
+        {
             if (canFetchFakeData)
             {
+                canFetchFakeData = false;
                 User_Model user = new User_Model();
 
                 user.Id = Id;
@@ -83,21 +99,9 @@ namespace com.mkadmi
                 user.ReportCount = ReportCount;
 
                 User.Instance().SetMe(user);
+                FindObjectOfType<View_Home_Manager>().Fetch_Users_Info();
             }
-        }
 
-        public async void FetchUsers()
-        {
-            List<UserIdMap_Model> users = await UserIdMap_Controller.Instance().GetAllUserIdMaps();
-
-            foreach (UserIdMap_Model user in users)
-            {
-                Debug.Log(user.ToJson().ToString());
-            }
-        }
-
-        private void Update()
-        {
             if (canShowUsersInfo)
             {
                 canShowUsersInfo = false;

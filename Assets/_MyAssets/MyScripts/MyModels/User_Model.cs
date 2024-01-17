@@ -39,7 +39,7 @@ namespace com.mkadmi
         public long VirtualCoins { get; set; }
 
         [Column("xp_points")]
-        public double XpPoints { get; set; }
+        public ulong XpPoints { get; set; }
 
         [Column("status")]
         public string Status { get; set; }

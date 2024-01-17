@@ -12,6 +12,10 @@ public class UserSettings
 
     #endregion
 
+    #region
+    public const short MAX_LEVEL = 50;
+    #endregion
+
     public string THEME_NAME { get; set; } = "light";
 
     static UserSettings _instance;

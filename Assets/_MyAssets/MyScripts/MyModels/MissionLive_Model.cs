@@ -39,7 +39,7 @@ namespace com.mkadmi
         public DateTime UpdatedAt { get; set; }
 
         [Column("decided_user_id")]
-        public string? DecidedUserId { get; set; }
+        public string DecidedUserId { get; set; }
 
         public string ToJson()
         {
