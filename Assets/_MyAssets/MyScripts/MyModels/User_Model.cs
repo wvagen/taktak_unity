@@ -2,6 +2,7 @@ using System;
 using Newtonsoft.Json;
 using Postgrest.Attributes;
 using Postgrest.Models;
+using UnityEngine;
 
 namespace com.mkadmi
 {
@@ -55,6 +56,8 @@ namespace com.mkadmi
 
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
+
+        public Sprite UserPhoto { get; set; }
 
         public User_Model()
         {

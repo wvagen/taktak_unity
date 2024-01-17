@@ -1,4 +1,5 @@
-
+using System;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace com.mkadmi
@@ -28,5 +29,33 @@ namespace com.mkadmi
             return reachedLevel;
         }
 
+        public static async Task<Sprite> Fetch_User_Img(string path)
+        {
+            Sprite photoImg;
+            try {
+                var bytes = await SB_Client.Instance().Storage.From(UserSettings.USER_FILES_PATH).Download(path, null);
+                photoImg = BytesToSprite(bytes);
+            }
+            catch (Exception e)
+            {
+                photoImg = Resources.Load("MyDefaultSprites/photo") as Sprite;
+                Debug.LogError("Error: "+ e.Message + " on Path: " + path);
+            }
+            return photoImg;
+        }
+
+        static Sprite BytesToSprite(byte[] imageBytes)
+        {
+            // Create a new Texture2D
+            Texture2D texture = new Texture2D(2, 2);
+
+            // Load image data into the texture
+            texture.LoadImage(imageBytes);
+
+            // Create a Sprite using the Texture2D
+            Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+
+            return sprite;
+        }
     }
 }

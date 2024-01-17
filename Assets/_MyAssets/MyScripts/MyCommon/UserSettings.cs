@@ -12,8 +12,14 @@ public class UserSettings
 
     #endregion
 
-    #region
+    #region params
     public const short MAX_LEVEL = 50;
+    #endregion
+
+    #region bucket paths
+
+    public const string USER_FILES_PATH = "User_Files";
+    
     #endregion
 
     public string THEME_NAME { get; set; } = "light";

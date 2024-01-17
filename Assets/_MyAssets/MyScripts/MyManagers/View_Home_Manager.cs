@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System.IO;
 using UPersian.Components;
 
 namespace com.mkadmi {
@@ -47,6 +48,14 @@ namespace com.mkadmi {
                 ulong wentValue = User.Instance().XpPoints - Tools.expNeededToReachLevel(levelReached - 1);
                 _levelSlider.value = (float)wentValue / totalValue;
             }
+            Load_User_Img();
+        }
+
+        async void Load_User_Img()
+        {
+           string imgPath = Path.Combine(User.Instance().Id, User.Instance().PhotoPath);
+           User.Instance().UserPhoto = await Tools.Fetch_User_Img(imgPath);
+           _photoImg.sprite = User.Instance().UserPhoto;
         }
 
     }
