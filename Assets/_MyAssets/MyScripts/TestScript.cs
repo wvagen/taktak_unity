@@ -63,7 +63,29 @@ namespace com.mkadmi
 
         private void Awake()
         {
-            
+            if (canFetchFakeData)
+            {
+                canFetchFakeData = false;
+                User_Model user = new User_Model();
+
+                user.Id = Id;
+                user.Number = Number;
+                user.UserName = UserName;
+                user.Name = Name;
+                user.Surname = Surname;
+                user.OauthId = OauthId;
+                user.OauthType = OauthType;
+                user.PhoneNumber = PhoneNumber;
+                user.PhotoPath = PhotoPath;
+                user.VirtualCoins = VirtualCoins;
+                user.XpPoints = XpPoints;
+                user.Status = Status;
+                user.Rating = Rating;
+                user.ReportCount = ReportCount;
+
+                User.Instance().SetMe(user);
+                FindObjectOfType<View_Home_Manager>().Fetch_Users_Info();
+            }
         }
 
         public async void FetchUsers()

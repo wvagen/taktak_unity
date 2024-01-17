@@ -51,11 +51,12 @@ namespace com.mkadmi {
             Load_User_Img();
         }
 
-        async void Load_User_Img()
+        void Load_User_Img()
         {
            string imgPath = Path.Combine(User.Instance().Id, User.Instance().PhotoPath);
-           User.Instance().UserPhoto = await Tools.Fetch_User_Img(imgPath);
-           _photoImg.sprite = User.Instance().UserPhoto;
+            //User.Instance().UserPhoto = await Tools.Fetch_User_Img(imgPath, _photoImg);
+            //_photoImg.sprite = User.Instance().UserPhoto;
+            Tools.Fetch_User_Img(imgPath, _photoImg);
         }
 
     }

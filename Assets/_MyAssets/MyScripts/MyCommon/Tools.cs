@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace com.mkadmi
 {
@@ -29,19 +30,21 @@ namespace com.mkadmi
             return reachedLevel;
         }
 
-        public static async Task<Sprite> Fetch_User_Img(string path)
+        public static void Fetch_User_Img(string path, Image imgRef)
         {
             Sprite photoImg;
             try {
-                var bytes = await SB_Client.Instance().Storage.From(UserSettings.USER_FILES_PATH).Download(path, null);
-                photoImg = BytesToSprite(bytes);
+                string fullPath = SB_Client.Instance().Storage.From(UserSettings.USER_FILES_PATH).GetPublicUrl(path);
+                Davinci.get().load(fullPath).into(imgRef).start();
+                //var bytes = await .Download(path, null);
+                //photoImg = BytesToSprite(bytes);
             }
             catch (Exception e)
             {
                 photoImg = Resources.Load("MyDefaultSprites/photo") as Sprite;
                 Debug.LogError("Error: "+ e.Message + " on Path: " + path);
             }
-            return photoImg;
+            //return photoImg;
         }
 
         static Sprite BytesToSprite(byte[] imageBytes)
