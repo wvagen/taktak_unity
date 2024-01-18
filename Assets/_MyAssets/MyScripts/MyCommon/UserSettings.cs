@@ -4,6 +4,7 @@ public class UserSettings
 {
     #region Player Prefs
     const string THEME_NAME_KEY = "light";
+    public const string CURRENT_APP_VERSION_KEY = "current_version";
     #endregion
 
     #region Scene Name
@@ -15,6 +16,8 @@ public class UserSettings
     #region Params
     public const short MAX_LEVEL = 50;
     public const short PING_RATE = 5;
+    public const short APP_VERSION_UPDATE = 0;
+
     #endregion
 
     #region bucket paths
