@@ -12,8 +12,9 @@ public class UserSettings
 
     #endregion
 
-    #region params
+    #region Params
     public const short MAX_LEVEL = 50;
+    public const short PING_RATE = 5;
     #endregion
 
     #region bucket paths
