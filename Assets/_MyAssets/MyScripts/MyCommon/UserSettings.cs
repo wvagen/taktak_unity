@@ -16,14 +16,37 @@ public class UserSettings
     #region Params
     public const short MAX_LEVEL = 50;
     public const short PING_RATE = 5;
-    public const short APP_VERSION_UPDATE = 0;
-
     #endregion
 
     #region bucket paths
 
     public const string USER_FILES_PATH = "User_Files";
-    
+
+    #endregion
+
+
+#if UNITY_ANDROID
+
+    public const short APP_VERSION = 0;
+
+#elif UNITY_IOS
+    public const short APP_VERSION = 0;
+#else
+    public const short APP_VERSION = 0;
+#endif
+
+    #region update links
+
+#if UNITY_ANDROID
+
+    public const string UPDATE_LINK = "https://google.fr/";
+
+#elif UNITY_IOS
+    public const string UPDATE_LINK = "https://google.fr/";
+#else
+    public const string UPDATE_LINK = "https://google.fr/";
+#endif
+
     #endregion
 
     public string THEME_NAME { get; set; } = "light";

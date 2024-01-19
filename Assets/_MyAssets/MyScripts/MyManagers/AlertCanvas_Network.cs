@@ -21,32 +21,26 @@ namespace com.mkadmi
 
         bool isNotConnectedPanelDisplayed = false;
 
-        int appCloudedVersion = 0;
         float timer = 0;
         float nextTargetTimer = 0;
-        Updates_Model model;
 
-        public async void SubToEvent()
+        private void Start()
         {
-            Debug.Log("Subscribing ...");
-            await SB_Client.Instance().From<Updates_Model>().On(ListenType.Updates, (sender, change) =>
-            {
-                model = change.Model<Updates_Model>();
-                Updates_Model oldModel = change.OldModel<Updates_Model>();
-
-                Debug.LogFormat("Old Model {0}: New Model {1}",oldModel.IOS_Version, model.IOS_Version);
-            });
+            Updates_Controller.Instance().GetAndSubscribeToUpdate(Update_Handler);
         }
 
-        public void GetValue()
+        public void UpdateBtn()
         {
-            Debug.Log("Value " + model.IOS_Version);
+            Application.OpenURL(UserSettings.UPDATE_LINK);
         }
-
-
 
         // Update is called once per frame
         void Update()
+        {
+            Connection_Manager();
+        }
+
+        void Connection_Manager()
         {
             if (!isConnected && isNotConnectedPanelDisplayed && isNotConnectedPanelDisplayedOnceAtLeast && !neverShowAgainThePanel)
             {
@@ -57,41 +51,13 @@ namespace com.mkadmi
             Check_Connection();
         }
 
-        void Update_Handler()
+        void Update_Handler(Updates_Model updateModel)
         {
-            if (PlayerPrefs.GetInt(UserSettings.CURRENT_APP_VERSION_KEY, 1) > UserSettings.APP_VERSION_UPDATE)
+            if (updateModel.IOS_Version > UserSettings.APP_VERSION)
             {
                 _UpdateRequiredPanel.Show();
             }
-            else
-            {
-                //Check_For_Update();
-            }
         }
-
-
-        //void Check_For_Update()
-        //{
-        //    FirebaseDatabase.DefaultInstance
-        // .GetReference(Constants.APP_VERSION)
-        // .GetValueAsync().ContinueWith(task =>
-        // {
-        //     if (task.IsFaulted)
-        //     {
-        //         isTaskFailed = true;
-        //     }
-        //     else if (task.IsCompleted)
-        //     {
-        //         DataSnapshot snapshot = task.Result;
-        //         if (Constants.APP_VERSION_UPDATE < (int.Parse(snapshot.Value.ToString())))
-        //         {
-        //             appCloudedVersion = int.Parse(snapshot.Value.ToString());
-        //             PlayerPrefs.SetInt(Constants.CURRENT_APP_VERSION, appCloudedVersion);
-        //             _UpdateRequiredPanel.Show();
-        //         }
-        //     }
-        // });
-        //}
 
         void Check_Connection()
         {
@@ -135,6 +101,7 @@ namespace com.mkadmi
                 isConnected = true;
                 neverShowAgainThePanel = false;
                 _NoConnectionPanel.Hide();
+
             }
         }
 

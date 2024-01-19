@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3020744681661823904}
-  - component: {fileID: 8612808257845445779}
-  - component: {fileID: 4613073653717669244}
-  - component: {fileID: 5554106784909961814}
-  - component: {fileID: 4661253923415458011}
-  - component: {fileID: 6151504666143715201}
+  - component: {fileID: 6146864148210010623}
+  - component: {fileID: 859268407264483748}
+  - component: {fileID: 6163340307684767523}
+  - component: {fileID: 6369569379434765796}
+  - component: {fileID: 8708123116323019585}
   m_Layer: 0
   m_Name: Update_RequiredPanel
   m_TagString: Untagged
@@ -39,10 +39,10 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1366, y: 308}
+  m_AnchoredPosition: {x: 1730, y: 1677}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &8612808257845445779
+--- !u!225 &6146864148210010623
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,7 +54,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &4613073653717669244
+--- !u!114 &859268407264483748
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,12 +140,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: -1094.3688, y: 308, z: 0}
-      ToValue: {x: 1366, y: 308, z: 0}
-      CurrentValue: {x: 1366, y: 308, z: 0}
+      FromValue: {x: 1730, y: 2368.4888, z: 0}
+      ToValue: {x: 1730, y: 1677, z: 0}
+      CurrentValue: {x: 1730, y: 1677, z: 0}
       Enabled: 0
       AnimationType: 0
-      StartPosition: {x: 1366, y: 308, z: 0}
+      StartPosition: {x: 1730, y: 1677, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -207,7 +207,7 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 0, y: 0, z: 0}
+      FromValue: {x: 0, y: 0, z: 240}
       ToValue: {x: 0, y: 0, z: 0}
       CurrentValue: {x: -0, y: 0, z: 0}
       Enabled: 0
@@ -271,7 +271,7 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1, y: 1, z: 1}
+      FromValue: {x: 0, y: 0, z: 0}
       ToValue: {x: 1, y: 1, z: 1}
       CurrentValue: {x: 1, y: 1, z: 1}
       Enabled: 0
@@ -337,7 +337,7 @@ MonoBehaviour:
         FadeOutShake: 0
       FromValue: 0
       ToValue: 1
-      CurrentValue: 0.99069095
+      CurrentValue: 1
       Enabled: 1
       StartAlpha: 1
       FromReferenceValue: 2
@@ -410,12 +410,12 @@ MonoBehaviour:
         Vibration: 8
         Elasticity: 1
         FadeOutShake: 0
-      FromValue: {x: 1366, y: 308, z: 0}
-      ToValue: {x: 1094.3688, y: 308, z: 0}
-      CurrentValue: {x: 1366, y: 308, z: 0}
+      FromValue: {x: 1730, y: 1677, z: 0}
+      ToValue: {x: 1094.3688, y: 1677, z: 0}
+      CurrentValue: {x: 1730, y: 1677, z: 0}
       Enabled: 0
       AnimationType: 1
-      StartPosition: {x: 1366, y: 308, z: 0}
+      StartPosition: {x: 1730, y: 1677, z: 0}
       FromReferenceValue: 0
       ToReferenceValue: 0
       FromCustomValue: {x: 0, y: 0, z: 0}
@@ -616,7 +616,7 @@ MonoBehaviour:
       ToCustomValue: 0
       FromOffset: 0
       ToOffset: 0
---- !u!223 &5554106784909961814
+--- !u!223 &6163340307684767523
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -639,7 +639,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &4661253923415458011
+--- !u!114 &6369569379434765796
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -656,7 +656,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6151504666143715201
+--- !u!114 &8708123116323019585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -704,7 +704,7 @@ MonoBehaviour:
   UseCustomStartPosition: 1
   AutoHideAfterShow: 0
   AutoHideAfterShowDelay: 0
-  DisableGameObjectWhenHidden: 1
+  DisableGameObjectWhenHidden: 0
   DisableCanvasWhenHidden: 1
   DisableGraphicRaycasterWhenHidden: 1
   HandleCanvasGroupBlockRaycasts: 1
@@ -6180,7 +6180,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7330988940372878757}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534106870665137589}
+        m_TargetAssemblyTypeName: com.mkadmi.AlertCanvas_Network, Assembly-CSharp
+        m_MethodName: UpdateBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2510353189134455192
 GameObject:
   m_ObjectHideFlags: 0
@@ -8051,7 +8063,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _NoConnectionPanel: {fileID: 906683839063988586}
-  _UpdateRequiredPanel: {fileID: 6151504666143715201}
+  _UpdateRequiredPanel: {fileID: 8708123116323019585}
 --- !u!1 &3736149096711902434
 GameObject:
   m_ObjectHideFlags: 0
