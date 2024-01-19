@@ -30,3 +30,11 @@ MonoBehaviour:
       Name: Shop
     - Category: None
       Name: None
+    - Category: PopUp
+      Name: error
+    - Category: PopUp
+      Name: info
+    - Category: PopUp
+      Name: Panel
+    - Category: PopUp
+      Name: warning

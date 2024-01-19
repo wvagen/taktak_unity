@@ -21,6 +21,10 @@ namespace Doozy.Runtime.UIManager.Containers
         public static IEnumerable<UIView> GetViews(UIViewId.Home id) => GetViews(nameof(UIViewId.Home), id.ToString());
         public static void Show(UIViewId.Home id, bool instant = false) => Show(nameof(UIViewId.Home), id.ToString(), instant);
         public static void Hide(UIViewId.Home id, bool instant = false) => Hide(nameof(UIViewId.Home), id.ToString(), instant);
+
+        public static IEnumerable<UIView> GetViews(UIViewId.PopUp id) => GetViews(nameof(UIViewId.PopUp), id.ToString());
+        public static void Show(UIViewId.PopUp id, bool instant = false) => Show(nameof(UIViewId.PopUp), id.ToString(), instant);
+        public static void Hide(UIViewId.PopUp id, bool instant = false) => Hide(nameof(UIViewId.PopUp), id.ToString(), instant);
     }
 }
 
@@ -41,6 +45,14 @@ namespace Doozy.Runtime.UIManager
             Mission,
             Profile,
             Shop
+        }
+
+        public enum PopUp
+        {
+            error,
+            info,
+            Panel,
+            warning
         }    
     }
 }

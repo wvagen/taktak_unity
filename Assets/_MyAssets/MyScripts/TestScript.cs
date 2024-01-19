@@ -14,6 +14,9 @@ namespace com.mkadmi
         public bool canSpawnMissionLive = false;
         public bool canGenerateFakeMissionData = false;
 
+        public bool canShowPanel = false;
+        public int panelIndexToShow = 0;
+
         public string Id ;
 
         public long Number ;
@@ -161,11 +164,26 @@ namespace com.mkadmi
                 profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
             }
 
+            if (canShowPanel)
+            {
+                canShowPanel = false;
+                switch (panelIndexToShow)
+                {
+                    case 0: AlertCanvas.Instance().infoPanel.ShowPanel("Mouadh", "Mkadmi", CallBackInfo);break;
+
+                }
+            }
+
             if (showSnackbar)
             {
                 showSnackbar = false;
                 FindAnyObjectByType<AlertCanvas>().Show_SnackBar(snackBarContent, snackBarType);
             }
+        }
+
+        void CallBackInfo()
+        {
+            Debug.Log("CallBack info function has been invoked!");
         }
 
         public void GenerateRandomMission()

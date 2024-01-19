@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UPersian.Components;
+using System;
 
 namespace com.mkadmi
 {
@@ -38,6 +39,8 @@ namespace com.mkadmi
         private List<Custom_SnackBar> _SnackBarQueue = new List<Custom_SnackBar>();
         [SerializeField]
         private UIContainer _SettingsPanel;
+
+        public AlertCanvas_PopUp infoPanel, warningPanel, errorPanel;
 
         static AlertCanvas _instance = null;
 
@@ -118,5 +121,6 @@ namespace com.mkadmi
             }
             Loading(false);
         }
+
     }
 }
