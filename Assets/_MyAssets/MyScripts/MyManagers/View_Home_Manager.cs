@@ -23,8 +23,6 @@ namespace com.mkadmi {
 
         [SerializeField]
         private Image _photoImg;
-        [SerializeField]
-        private Sprite _photoSprite;
 
         private void Start()
         {
