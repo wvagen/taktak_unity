@@ -26,6 +26,8 @@ namespace com.mkadmi
 
         [SerializeField]
         private UIContainer loadingPanel;
+        [SerializeField]
+        private UIContainer dimPanel;
 
         [SerializeField]
         private UIContainer _SnackBar;
@@ -40,7 +42,8 @@ namespace com.mkadmi
         [SerializeField]
         private UIContainer _SettingsPanel;
 
-        public AlertCanvas_PopUp infoPanel, warningPanel, errorPanel;
+        [SerializeField]
+        private AlertCanvas_PopUp infoPanel, warningPanel, errorPanel;
 
         static AlertCanvas _instance = null;
 
@@ -68,6 +71,29 @@ namespace com.mkadmi
             {
                 loadingPanel.Hide();
             }
+        }
+
+        public void ShowInfoPanel(string title, string body, Action okCallBack = null)
+        {
+            ShowDim();
+            infoPanel.ShowPanel(title, body, okCallBack);
+        }
+
+        public void ShowWarningPanel(string title, string body, Action okCallBack = null, Action noCallBack = null)
+        {
+            ShowDim();
+            warningPanel.ShowPanel(title, body, okCallBack, noCallBack);
+        }
+
+        public void ShowErrorPanel(string title, string body, Action okCallBack = null, Action noCallBack = null)
+        {
+            ShowDim();
+            errorPanel.ShowPanel(title, body, okCallBack);
+        }
+
+        void ShowDim()
+        {
+            dimPanel.Show();
         }
 
         public void Show_SnackBar(string title, int type = 0)

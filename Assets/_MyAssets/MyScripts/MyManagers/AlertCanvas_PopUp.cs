@@ -9,7 +9,7 @@ namespace com.mkadmi
     public class AlertCanvas_PopUp : MonoBehaviour
     {
         [SerializeField]
-        private UIToggle _PopUpPanel;       
+        private UIContainer _PopUpPanel;       
         [SerializeField]
         private RtlText _TitleTxt,_BodyTxt;
 
@@ -31,17 +31,22 @@ namespace com.mkadmi
             _TitleTxt.text = title;
             _BodyTxt.text = body;
 
-            _PopUpPanel.IsOn = true;
+            _PopUpPanel.Show();
         }
 
         public void HidePanel()
         {
-
             if (okBtnCallBack != null)
             {
                 okBtnCallBack.Invoke();
                 okBtnCallBack = null;
             }
+
+            _PopUpPanel.Hide();
+        }
+
+        public void HideNoCallback()
+        {
 
             if (noBtnCallBack != null)
             {
@@ -49,7 +54,7 @@ namespace com.mkadmi
                 noBtnCallBack = null;
             }
 
-            _PopUpPanel.IsOn = false;
+            _PopUpPanel.Hide();
         }
 
     }

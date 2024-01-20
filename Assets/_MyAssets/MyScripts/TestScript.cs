@@ -169,8 +169,10 @@ namespace com.mkadmi
                 canShowPanel = false;
                 switch (panelIndexToShow)
                 {
-                    case 0: AlertCanvas.Instance().infoPanel.ShowPanel("Mouadh", "Mkadmi", CallBackInfo);break;
-
+                    case 0: AlertCanvas.Instance().ShowInfoPanel("Mouadh", "Mkadmi", YesCallBack);break;
+                    case 1: AlertCanvas.Instance().ShowWarningPanel("Mouadh", "Mkadmi", YesCallBack,NoCallback); break;
+                    case 2: AlertCanvas.Instance().ShowErrorPanel("Mouadh", "Mkadmi", YesCallBack); break;
+                    case 3: AlertCanvas.Instance().ShowInfoPanel(GenerateRandomWord(5), GenerateRandomWord(20)); break;
                 }
             }
 
@@ -181,9 +183,14 @@ namespace com.mkadmi
             }
         }
 
-        void CallBackInfo()
+        void YesCallBack()
         {
-            Debug.Log("CallBack info function has been invoked!");
+            Debug.Log("Yes CallBack function has been invoked!");
+        }
+
+        void NoCallback()
+        {
+            Debug.Log("No CallBack function has been invoked!");
         }
 
         public void GenerateRandomMission()
