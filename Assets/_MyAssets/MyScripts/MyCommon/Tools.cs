@@ -30,6 +30,48 @@ namespace com.mkadmi
             return reachedLevel;
         }
 
+        public static DateTime Convert_To_DateTime(double unixTimeStamp)
+        {
+            // Unix timestamp is seconds past epoch
+            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            dateTime = dateTime.AddSeconds(unixTimeStamp).ToLocalTime();
+            return dateTime;
+        }
+
+        public static long Convert_To_TimeStamp(string time)
+        {
+            DateTime foo = DateTime.Now;
+            long unixTime = 0;
+            try
+            {
+                foo = DateTime.Parse(time);
+            }
+            catch (Exception e)
+            {
+                Debug.Log("ERROR Parsing Time " + e.Message);
+                try
+                {
+
+                    foo = DateTime.ParseExact(time, "dd/MM/yyyy HH:mm:ss", null);
+                }
+                catch (Exception ex)
+                {
+                    try
+                    {
+                        foo = DateTime.ParseExact(time, "dd/MM/yyyy", null);
+                        unixTime += 10000;
+                    }
+                    catch (Exception ex1)
+                    {
+                        Debug.Log("ERROR 3 Parsing time " + ex1.Message + " time");
+                        return 844696800;
+                    }
+                }
+            }
+            unixTime += ((DateTimeOffset)foo).ToUnixTimeSeconds();
+            return unixTime;
+        }
+
         public static void Fetch_User_Img(string path, Image imgRef)
         {
             //Sprite photoImg;

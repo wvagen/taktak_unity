@@ -49,6 +49,10 @@ public class UserSettings
 
     #endregion
 
+    #region API Links
+    public static string TIME_API = "http://worldtimeapi.org/api/ip";
+    #endregion
+
     public string THEME_NAME { get; set; } = "light";
 
     static UserSettings _instance;
