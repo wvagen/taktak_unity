@@ -14,7 +14,7 @@ namespace com.mkadmi
 
         class Custom_SnackBar
         {
-            public int SnackBarType;
+            public int SnackBarType; //0: Info, 1: Success, 2: Warning, 3: Error
             public string SnackBarContent;
 
             public Custom_SnackBar(string SnackBarContent, int SnackBarType)

@@ -15,7 +15,7 @@ namespace com.mkadmi
         public string RequesterId { get; set; }
 
         [Column("committers_id")]
-        public long[] CommittersId { get; set; }
+        public string[] CommittersId { get; set; }
 
         [Column("reward_virt_coins")]
         public long RewardVirtCoins { get; set; }
@@ -28,6 +28,15 @@ namespace com.mkadmi
 
         [Column("location")]
         public string Location { get; set; }
+
+        [Column("country")]
+        public string Country { get; set; }
+
+        [Column("city")]
+        public string City { get; set; }
+
+        [Column("area")]
+        public string Area { get; set; }
 
         [Column("deadline")]
         public DateTime? Deadline { get; set; }
