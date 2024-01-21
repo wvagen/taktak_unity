@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using static Supabase.Realtime.PostgresChanges.PostgresChangesOptions;
 
 namespace com.mkadmi
 {
@@ -15,6 +16,14 @@ namespace com.mkadmi
                 _instance = new MissionLive_Controller();
             }
             return _instance;
+        }
+
+        public async void SubscribeToInsert(Action<MissionLive_Model> callBack)
+        {
+            await SB_Client.Instance().From<MissionLive_Model>().On(ListenType.Inserts, (sender, change) =>
+            {
+                callBack(change.Model<MissionLive_Model>());
+            });
         }
 
 

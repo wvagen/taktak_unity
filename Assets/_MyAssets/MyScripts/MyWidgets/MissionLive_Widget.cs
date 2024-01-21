@@ -6,79 +6,90 @@ using UPersian.Components;
 using TMPro;
 using System;
 
-public class MissionLive_Widget : MonoBehaviour
-{
-    #region Mission Area
-    [SerializeField]
-    private TextMeshProUGUI _RewardVirCoinsTxt;
-    [SerializeField]
-    private TextMeshProUGUI _RewardExpTxt;
-    [SerializeField]
-    private TextMeshProUGUI _CommittersTxt;
-    [SerializeField]
-    private RtlText _MissionDescription;
-    #endregion
-
-    [SerializeField]
-    private MissionLive_User_Widget _MyUserWidget;
-
-    #region Slider Area
-    [SerializeField]
-    private Slider _TimeSlider;
-    [SerializeField]
-    private Image _SliderFillImg;
-    [SerializeField]
-    private Color[] _sliderColors;
-    [SerializeField]
-    private TextMeshProUGUI _sliderRemainingTimeTxt;
-    #endregion
-
-    public void Set_Profile(string userName,int userLevelAmount,float starsNote,Sprite profilePic)
+namespace com.mkadmi {
+    public class MissionLive_Widget : MonoBehaviour
     {
-        _MyUserWidget.SetMe(userName, userLevelAmount, starsNote, profilePic);
-    }
+        #region Mission Area
+        [SerializeField]
+        private TextMeshProUGUI _RewardVirCoinsTxt;
+        [SerializeField]
+        private TextMeshProUGUI _RewardExpTxt;
+        [SerializeField]
+        private TextMeshProUGUI _CommittersTxt;
+        [SerializeField]
+        private RtlText _MissionDescription;
+        #endregion
 
-    public void Set_Timer(float timeLimit)
-    {
-        StartCoroutine(StartSlider(timeLimit));
-    }
+        [SerializeField]
+        private MissionLive_User_Widget _MyUserWidget;
 
-    public void Set_Mission_Props(string missionDesc, int rewardVirtCoins,int rewardExp, int committersCount)
-    {
-        _MissionDescription.text = missionDesc;
-        _RewardVirCoinsTxt.text = rewardVirtCoins.ToString() ;
-        _RewardExpTxt.text = rewardExp.ToString();
-        _CommittersTxt.text = committersCount.ToString();
-    }
+        #region Slider Area
+        [SerializeField]
+        private Slider _TimeSlider;
+        [SerializeField]
+        private Image _SliderFillImg;
+        [SerializeField]
+        private Color[] _sliderColors;
+        [SerializeField]
+        private TextMeshProUGUI _sliderRemainingTimeTxt;
+        #endregion
 
-    IEnumerator StartSlider(float timeSeconds)
-    {
-        float remainingTime = timeSeconds;
-        TimeSpan t = TimeSpan.FromSeconds(remainingTime);
-
-        while (remainingTime > 0)
+        public void Set_Profile(string userName, int userLevelAmount, float starsNote, Sprite profilePic)
         {
-            remainingTime -= Time.deltaTime;
-
-            if (remainingTime <= 0)
-            {
-                remainingTime = 0;
-                _TimeSlider.value = 0;
-            }
-            else _TimeSlider.value = remainingTime / timeSeconds;
-
-            t = TimeSpan.FromSeconds(remainingTime);
-            _sliderRemainingTimeTxt.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
-                t.Hours,
-                t.Minutes,
-                t.Seconds);
-
-            if (_TimeSlider.value > 0.7f) _SliderFillImg.color = _sliderColors[0];
-            else if (_TimeSlider.value > 0.3f) _SliderFillImg.color = _sliderColors[1];
-            else _SliderFillImg.color = _sliderColors[2];
-
-            yield return new WaitForEndOfFrame();
+            _MyUserWidget.SetMe(userName, userLevelAmount, starsNote, profilePic);
         }
-    }
 
+        public void Set_Timer(float timeLimit)
+        {
+            StartCoroutine(StartSlider(timeLimit));
+        }
+
+        public void Set_Mission_Props(string missionDesc, int rewardVirtCoins, int rewardExp, int committersCount)
+        {
+            _MissionDescription.text = missionDesc;
+            _RewardVirCoinsTxt.text = rewardVirtCoins.ToString();
+            _RewardExpTxt.text = rewardExp.ToString();
+            _CommittersTxt.text = committersCount.ToString();
+        }
+
+        public void Set_Mission_Props(MissionLive_Model missionLiveModel)
+        {
+            _MissionDescription.text = missionLiveModel.Title;
+            _RewardVirCoinsTxt.text = missionLiveModel.RewardVirtCoins.ToString();
+            _RewardExpTxt.text = missionLiveModel.RewardXp.ToString();
+            _CommittersTxt.text = missionLiveModel.CommittersId.ToString();
+            Set_Timer((float)(missionLiveModel.Deadline - CorrectTime.Instance().realDate).TotalSeconds);
+        }
+    
+    IEnumerator StartSlider(float timeSeconds)
+        {
+            float remainingTime = timeSeconds;
+            TimeSpan t = TimeSpan.FromSeconds(remainingTime);
+
+            while (remainingTime > 0)
+            {
+                remainingTime -= Time.deltaTime;
+
+                if (remainingTime <= 0)
+                {
+                    remainingTime = 0;
+                    _TimeSlider.value = 0;
+                }
+                else _TimeSlider.value = remainingTime / timeSeconds;
+
+                t = TimeSpan.FromSeconds(remainingTime);
+                _sliderRemainingTimeTxt.text = string.Format("{0:D2}h:{1:D2}m:{2:D2}s",
+                    t.Hours,
+                    t.Minutes,
+                    t.Seconds);
+
+                if (_TimeSlider.value > 0.7f) _SliderFillImg.color = _sliderColors[0];
+                else if (_TimeSlider.value > 0.3f) _SliderFillImg.color = _sliderColors[1];
+                else _SliderFillImg.color = _sliderColors[2];
+
+                yield return new WaitForEndOfFrame();
+            }
+        }
+
+    }
 }

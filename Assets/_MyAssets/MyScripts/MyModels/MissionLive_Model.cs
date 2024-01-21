@@ -39,7 +39,7 @@ namespace com.mkadmi
         public string Area { get; set; }
 
         [Column("deadline")]
-        public DateTime? Deadline { get; set; }
+        public DateTime Deadline { get; set; }
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; }
