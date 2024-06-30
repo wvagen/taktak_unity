@@ -8,8 +8,8 @@ public class UserSettings
     #endregion
 
     #region Scene Name
-    public const string SCENE_AUTH = "0_AuthScene";
-    public const string SCENE_MAIN_MENU = "1_MainScene";
+    public const string SCENE_AUTH = "Client_0_AuthScene";
+    public const string SCENE_MAIN_MENU = "Client_1_MainScene";
 
     #endregion
 
