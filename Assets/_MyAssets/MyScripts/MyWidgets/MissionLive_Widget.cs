@@ -21,7 +21,7 @@ namespace com.mkadmi {
         #endregion
 
         [SerializeField]
-        private MissionLive_User_Widget _MyUserWidget;
+        private MissionLive_Company_Widget _MyCompanyWidget;
 
         #region Slider Area
         [SerializeField]

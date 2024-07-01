@@ -1,40 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
+
 
 namespace com.mkadmi
 {
-    public class MissionLive_User_Widget : MonoBehaviour
+    public class MissionLive_Company_Widget : MonoBehaviour
     {
         [SerializeField]
-        private TextMeshProUGUI _UserNameTxt;
+        private TextMeshProUGUI _CompanyNameTxt;
         [SerializeField]
-        private TextMeshProUGUI _UserLevelTxt;
+        private TextMeshProUGUI _CompanyLevelTxt;
         [SerializeField]
         private List<Image> _StarsImgs;
         [SerializeField]
         private Image _ProfilePictureImg;
-
-        public string userName { get; set; }
-        int userLevelAmount { get; set; }
-        float starsNote { get; set; }
         Sprite profilePic { get; set; }
 
-        public void SetMe(string userName, int userLevelAmount, float starsNote, Sprite profilePic)
+        Company_Model companyModel;
+        public void SetMe(Company_Model companyModel string userName, int userLevelAmount, float starsNote, Sprite profilePic)
         {
-            this.userName = userName;
-            this.userLevelAmount = userLevelAmount;
-            this.starsNote = starsNote;
-            this.profilePic = profilePic;
+            this.companyModel = companyModel;
             Update_UI();
         }
 
         void Update_UI()
         {
-            _UserNameTxt.text = userName;
-            _UserLevelTxt.text = userLevelAmount.ToString();
+            this.userName = companyModel.CompanyName;
+            this.userLevelAmount = userLevelAmount;
+            this.starsNote = starsNote;
+            this.profilePic = profilePic;
+            _CompanyNameTxt.text = companyModel.CompanyName;
+            _CompanyLevelTxt.text = userLevelAmount.ToString();
             int i = 0;
             for (i = 0; i < (int)starsNote; i++)
             {

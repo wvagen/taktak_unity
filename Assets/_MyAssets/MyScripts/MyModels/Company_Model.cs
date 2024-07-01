@@ -42,6 +42,8 @@ namespace com.mkadmi
         [Column("updated_at")]
         public DateTime? UpdatedAt { get; set; }
 
+        public Sprite CompanySprite{ get; set; }
+
         public Company_Model()
         {
 
