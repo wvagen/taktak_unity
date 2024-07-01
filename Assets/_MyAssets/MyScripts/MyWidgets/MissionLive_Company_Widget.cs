@@ -20,7 +20,7 @@ namespace com.mkadmi
         Sprite profilePic { get; set; }
 
         Company_Model companyModel;
-        public void SetMe(Company_Model companyModel string userName, int userLevelAmount, float starsNote, Sprite profilePic)
+        public void SetMe(Company_Model companyModel, string userName, int userLevelAmount, float starsNote, Sprite profilePic)
         {
             this.companyModel = companyModel;
             Update_UI();
