@@ -11,11 +11,17 @@ namespace com.mkadmi
         [PrimaryKey("id", false)]
         public long Id { get; set; }
 
-        [Column("requester_id")]
-        public string RequesterId { get; set; }
+        [Column("company_id")]
+        public string CompanyID { get; set; }
 
         [Column("committers_id")]
         public string[] CommittersId { get; set; }
+
+        [Column("item_price")]
+        public float ItemPrice { get; set; }
+
+        [Column("item_photo_path")]
+        public string ItemPhotoPath { get; set; }
 
         [Column("reward_virt_coins")]
         public long RewardVirtCoins { get; set; }
@@ -25,6 +31,18 @@ namespace com.mkadmi
 
         [Column("title")]
         public string Title { get; set; }
+
+        [Column("title_fr")]
+        public string TitleFr { get; set; }
+
+        [Column("title_en")]
+        public string TitleEn { get; set; }
+
+        [Column("title_ar")]
+        public string TitleAr { get; set; }
+
+        [Column("title_tn")]
+        public string TitleTn { get; set; }
 
         [Column("location")]
         public string Location { get; set; }

@@ -34,6 +34,8 @@ namespace com.mkadmi {
         private TextMeshProUGUI _sliderRemainingTimeTxt;
         #endregion
 
+        MissionLive_Model missionLiveModel;
+
         public void Set_Profile(string userName, int userLevelAmount, float starsNote, Sprite profilePic)
         {
             _MyUserWidget.SetMe(userName, userLevelAmount, starsNote, profilePic);
@@ -54,6 +56,7 @@ namespace com.mkadmi {
 
         public void Set_Mission_Props(MissionLive_Model missionLiveModel)
         {
+            this.missionLiveModel = missionLiveModel;
             _MissionDescription.text = missionLiveModel.Title;
             _RewardVirCoinsTxt.text = missionLiveModel.RewardVirtCoins.ToString();
             _RewardExpTxt.text = missionLiveModel.RewardXp.ToString();

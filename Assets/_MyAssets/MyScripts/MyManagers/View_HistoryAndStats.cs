@@ -60,7 +60,7 @@ namespace com.mkadmi {
             newMission.RewardXp = 300;
             newMission.RewardVirtCoins = RewardValue();
             newMission.Title = _MissionBodyTxt.text;
-            newMission.RequesterId = User.Instance().Id;
+            //newMission.RequesterId = User.Instance().Id;
             newMission.Deadline = DeadlineValue();
             string[] commitersID = {""};
             newMission.CommittersId = commitersID;
