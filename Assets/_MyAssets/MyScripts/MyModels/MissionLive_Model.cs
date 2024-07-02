@@ -14,9 +14,6 @@ namespace com.mkadmi
         [Column("company_id")]
         public long CompanyID { get; set; }
 
-        [Column("committers_id")]
-        public string[] CommittersId { get; set; }
-
         [Column("item_price")]
         public float ItemPrice { get; set; }
 
@@ -44,6 +41,17 @@ namespace com.mkadmi
         [Column("title_tn")]
         public string TitleTn { get; set; }
 
+        [Column("location")]
+        public string Location { get; set; }
+
+        [Column("country")]
+        public string Country { get; set; }
+
+        [Column("city")]
+        public string City { get; set; }
+
+        [Column("area")]
+        public string Area { get; set; }
 
         [Column("deadline")]
         public DateTime Deadline { get; set; }

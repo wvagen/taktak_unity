@@ -213,7 +213,6 @@ namespace com.mkadmi
             missionLiveModel.RewardVirtCoins = UnityEngine.Random.Range(10, 100);
             missionLiveModel.Deadline = DateTime.Today.AddDays(2);
             missionLiveModel.RewardXp = UnityEngine.Random.Range(10, 100);
-            missionLiveModel.CommittersId = randomCommittersID;
             missionLiveModel.ItemPrice = UnityEngine.Random.Range(0.1f, 30f);
             missionLiveModel.Title = GenerateRandomWord(5);
 

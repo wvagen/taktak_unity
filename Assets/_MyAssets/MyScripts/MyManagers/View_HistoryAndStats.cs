@@ -63,7 +63,6 @@ namespace com.mkadmi {
             //newMission.RequesterId = User.Instance().Id;
             newMission.Deadline = DeadlineValue();
             string[] commitersID = {""};
-            newMission.CommittersId = commitersID;
             await MissionLive_Controller.Instance().CreateMission(newMission);
             AlertCanvas.Instance().Show_SnackBar("Success", 1);
             

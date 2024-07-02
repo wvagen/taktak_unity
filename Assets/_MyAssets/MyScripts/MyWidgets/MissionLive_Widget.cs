@@ -54,7 +54,6 @@ namespace com.mkadmi {
             _MissionDescription.text = missionLiveModel.Title;
             _RewardVirCoinsTxt.text = missionLiveModel.RewardVirtCoins.ToString();
             _RewardExpTxt.text = missionLiveModel.RewardXp.ToString();
-            _CommittersTxt.text = missionLiveModel.CommittersId.Length.ToString();
             _PriceTxt.text = missionLiveModel.ItemPrice.ToString("F3") + " TND";
             Set_Timer((float)(missionLiveModel.Deadline - CorrectTime.Instance().realDate).TotalSeconds);
         }
