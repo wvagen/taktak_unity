@@ -12,6 +12,9 @@ namespace com.mkadmi
         [PrimaryKey("id", false)]
         public string Id { get; set; }
 
+        [Column("number")]
+        public long Number { get; set; }
+
         [Column("company_name")]
         public string CompanyName { get; set; }
 

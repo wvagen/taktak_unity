@@ -145,10 +145,7 @@ namespace com.mkadmi
             if (canSpawnMissionLive)
             {
                 canSpawnMissionLive = false;
-                MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
-                missionLive.Set_Profile(userName, userLevelAmount, starsNote, profilePic);
-                missionLive.Set_Timer(timeSeconds);
-                missionLive.Set_Mission_Props(missionDesc, rewardCoins, expAmount, committers);
+                GenerateRandomMission();
             }
             if (canGenerateFakeMissionData)
             {
@@ -195,6 +192,7 @@ namespace com.mkadmi
 
         public void GenerateRandomMission()
         {
+            Company_Model company_Model = new Company_Model();
             userName = GenerateRandomWord(5);
             missionDesc = userName = GenerateRandomWord(25);
             starsNote = UnityEngine.Random.Range(0, 5);
@@ -205,8 +203,13 @@ namespace com.mkadmi
             timeSeconds = UnityEngine.Random.Range(10, 3600);
             profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
 
+            company_Model.CompanyName = userName;
+            company_Model.XpPoints = (ulong) userLevelAmount;
+            company_Model.Rating = (ulong)starsNote;
+            company_Model.CompanySprite = profilePic;
+
             MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
-            missionLive.Set_Profile(userName, userLevelAmount, starsNote, profilePic);
+            missionLive.Set_Profile(company_Model);
             missionLive.Set_Timer(timeSeconds);
             missionLive.Set_Mission_Props(missionDesc, rewardCoins, expAmount, committers);
         }

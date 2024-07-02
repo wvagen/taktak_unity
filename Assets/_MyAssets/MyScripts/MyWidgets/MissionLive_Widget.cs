@@ -36,9 +36,9 @@ namespace com.mkadmi {
 
         MissionLive_Model missionLiveModel;
 
-        public void Set_Profile(string userName, int userLevelAmount, float starsNote, Sprite profilePic)
+        public void Set_Profile(Company_Model companyModel)
         {
-            _MyUserWidget.SetMe(userName, userLevelAmount, starsNote, profilePic);
+            _MyCompanyWidget.SetMe(companyModel);
         }
 
         public void Set_Timer(float timeLimit)
