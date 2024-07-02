@@ -22,13 +22,13 @@ namespace com.mkadmi
 
         async void SpawnMissions()
         {
-            List<MissionLive_Model> missions = new List<MissionLive_Model>();
-            missions = await MissionLive_Controller.Instance().GetAllMissions();
+            List<Joint_Company_MissionLive_Model> missions = new List<Joint_Company_MissionLive_Model>();
+            missions = await JointModels_Controller.Instance().GetMissionLiveWithCompanies(10,0);
 
             for (int i = 0; i < missions.Count; i++)
             {
                 MissionLive_Widget missionLive = Instantiate(_MissionGO, _MissionLocation).GetComponent<MissionLive_Widget>();
-                missionLive.Set_Mission_Props(missions[i]);
+                await missionLive.Set_MissionWithCompanyAsync(missions[i]);
             }
         }
 
@@ -36,7 +36,7 @@ namespace com.mkadmi
         {
             Debug.Log("New Mission Generated!");
             MissionLive_Widget missionLive = Instantiate(_MissionGO, _MissionLocation).GetComponent<MissionLive_Widget>();
-            missionLive.Set_Mission_Props(newMission);
+            missionLive.Set_Mission_PropsAsync(newMission);
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UPersian.Components;
 using TMPro;
 using System;
+using System.Threading.Tasks;
 
 namespace com.mkadmi {
     public class MissionLive_Widget : MonoBehaviour
@@ -20,6 +21,8 @@ namespace com.mkadmi {
         private TextMeshProUGUI _PriceTxt;
         [SerializeField]
         private RtlText _MissionDescription;
+        [SerializeField]
+        private Image _MissionItemImg;
         #endregion
 
         [SerializeField]
@@ -48,14 +51,21 @@ namespace com.mkadmi {
             StartCoroutine(StartSlider(timeLimit));
         }
 
-        public void Set_Mission_Props(MissionLive_Model missionLiveModel)
+        public async Task Set_Mission_PropsAsync(MissionLive_Model missionLiveModel)
         {
             this.missionLiveModel = missionLiveModel;
             _MissionDescription.text = missionLiveModel.Title;
             _RewardVirCoinsTxt.text = missionLiveModel.RewardVirtCoins.ToString();
             _RewardExpTxt.text = missionLiveModel.RewardXp.ToString();
             _PriceTxt.text = missionLiveModel.ItemPrice.ToString("F3") + " TND";
+            _MissionItemImg.sprite = await Tools.LoadSpriteAsync(missionLiveModel.ItemPhotoPath);
             Set_Timer((float)(missionLiveModel.Deadline - CorrectTime.Instance().realDate).TotalSeconds);
+        }
+
+        public async Task Set_MissionWithCompanyAsync(Joint_Company_MissionLive_Model joinMissionCompany)
+        {
+            await Set_Mission_PropsAsync(joinMissionCompany.MissionLive);
+            Set_Company_Profile(joinMissionCompany.Company);
         }
     
     IEnumerator StartSlider(float timeSeconds)

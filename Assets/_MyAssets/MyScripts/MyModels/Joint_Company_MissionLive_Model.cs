@@ -1,4 +1,3 @@
-
 namespace com.mkadmi
 {
     public class Joint_Company_MissionLive_Model

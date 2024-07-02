@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace com.mkadmi
@@ -28,6 +29,29 @@ namespace com.mkadmi
                 }
             }
             return reachedLevel;
+        }
+
+        public static async Task<Sprite> LoadSpriteAsync(string uri)
+        {
+            using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
+            {
+                var asyncOp = request.SendWebRequest();
+
+                while (!asyncOp.isDone)
+                {
+                    await Task.Yield();
+                }
+
+                if (request.result == UnityWebRequest.Result.ConnectionError ||
+                    request.result == UnityWebRequest.Result.ProtocolError)
+                {
+                    Debug.LogError(request.error);
+                    return null;
+                }
+
+                Texture2D texture = DownloadHandlerTexture.GetContent(request);
+                return Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+            }
         }
 
         public static DateTime Convert_To_DateTime(double unixTimeStamp)

@@ -218,7 +218,7 @@ namespace com.mkadmi
 
             MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
             missionLive.Set_Company_Profile(company_Model);
-            missionLive.Set_Mission_Props(missionLiveModel);
+            missionLive.Set_Mission_PropsAsync(missionLiveModel);
         }
 
         static string GenerateRandomWord(int maxLength)
