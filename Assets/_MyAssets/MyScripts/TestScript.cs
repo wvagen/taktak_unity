@@ -204,7 +204,7 @@ namespace com.mkadmi
 
             Company_Model company_Model = new Company_Model();
             company_Model.CompanyName = GenerateRandomWord(5);
-            company_Model.XpPoints = (ulong)UnityEngine.Random.Range(0, 100);
+            company_Model.XpPoints = (ulong)UnityEngine.Random.Range(0, 50000);
             company_Model.Rating = (ulong)UnityEngine.Random.Range(0, 5);
             company_Model.CompanySprite = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
 
