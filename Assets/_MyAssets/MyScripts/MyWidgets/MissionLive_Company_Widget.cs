@@ -17,10 +17,9 @@ namespace com.mkadmi
         private List<Image> _StarsImgs;
         [SerializeField]
         private Image _ProfilePictureImg;
-        Sprite profilePic { get; set; }
 
         Company_Model companyModel;
-        public void SetMe(Company_Model companyModel, string userName, int userLevelAmount, float starsNote, Sprite profilePic)
+        public void SetMe(Company_Model companyModel)
         {
             this.companyModel = companyModel;
             Update_UI();
@@ -28,20 +27,20 @@ namespace com.mkadmi
 
         void Update_UI()
         {
-            this.userName = companyModel.CompanyName;
-            this.userLevelAmount = userLevelAmount;
-            this.starsNote = starsNote;
-            this.profilePic = profilePic;
+            this._CompanyNameTxt.text = companyModel.CompanyName;
+            this._CompanyLevelTxt.text = Tools.levelReached(companyModel.XpPoints).ToString();
             _CompanyNameTxt.text = companyModel.CompanyName;
-            _CompanyLevelTxt.text = userLevelAmount.ToString();
+            _CompanyLevelTxt.text = Tools.levelReached(companyModel.XpPoints).ToString();
+            float starsNote = companyModel.Rating ?? 0;
+
             int i = 0;
-            for (i = 0; i < (int)starsNote; i++)
+            for (i = 0; i < (int)companyModel.Rating; i++)
             {
                 _StarsImgs[i].fillAmount = 1;
             }
             if (i != 5) _StarsImgs[i].fillAmount = (starsNote - (int)starsNote);
 
-            _ProfilePictureImg.sprite = profilePic;
+            _ProfilePictureImg.sprite = companyModel.CompanySprite;
         }
     }
 }
