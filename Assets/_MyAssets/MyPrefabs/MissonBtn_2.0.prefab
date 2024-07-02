@@ -4220,6 +4220,7 @@ MonoBehaviour:
   _RewardVirCoinsTxt: {fileID: 8304068531926806974}
   _RewardExpTxt: {fileID: 5431783378989239866}
   _CommittersTxt: {fileID: 8037425132824056231}
+  _PriceTxt: {fileID: 7921610387661362888}
   _MissionDescription: {fileID: 7391822392504696660}
   _MyCompanyWidget: {fileID: 4169464810604658131}
   _TimeSlider: {fileID: 3105065333777368277}

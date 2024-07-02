@@ -17,6 +17,8 @@ namespace com.mkadmi {
         [SerializeField]
         private TextMeshProUGUI _CommittersTxt;
         [SerializeField]
+        private TextMeshProUGUI _PriceTxt;
+        [SerializeField]
         private RtlText _MissionDescription;
         #endregion
 
@@ -36,22 +38,14 @@ namespace com.mkadmi {
 
         MissionLive_Model missionLiveModel;
 
-        public void Set_Profile(Company_Model companyModel)
+        public void Set_Company_Profile(Company_Model companyModel)
         {
             _MyCompanyWidget.SetMe(companyModel);
         }
 
-        public void Set_Timer(float timeLimit)
+        void Set_Timer(float timeLimit)
         {
             StartCoroutine(StartSlider(timeLimit));
-        }
-
-        public void Set_Mission_Props(string missionDesc, int rewardVirtCoins, int rewardExp, int committersCount)
-        {
-            _MissionDescription.text = missionDesc;
-            _RewardVirCoinsTxt.text = rewardVirtCoins.ToString();
-            _RewardExpTxt.text = rewardExp.ToString();
-            _CommittersTxt.text = committersCount.ToString();
         }
 
         public void Set_Mission_Props(MissionLive_Model missionLiveModel)
@@ -60,7 +54,8 @@ namespace com.mkadmi {
             _MissionDescription.text = missionLiveModel.Title;
             _RewardVirCoinsTxt.text = missionLiveModel.RewardVirtCoins.ToString();
             _RewardExpTxt.text = missionLiveModel.RewardXp.ToString();
-            _CommittersTxt.text = missionLiveModel.CommittersId.ToString();
+            _CommittersTxt.text = missionLiveModel.CommittersId.Length.ToString();
+            _PriceTxt.text = missionLiveModel.ItemPrice.ToString("F2") + " TND";
             Set_Timer((float)(missionLiveModel.Deadline - CorrectTime.Instance().realDate).TotalSeconds);
         }
     

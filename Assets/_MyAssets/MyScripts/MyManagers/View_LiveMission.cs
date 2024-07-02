@@ -17,7 +17,7 @@ namespace com.mkadmi
         void Start()
         {
             SpawnMissions();
-            MissionLive_Controller.Instance().SubscribeToInsert(CallBackMission);
+            //MissionLive_Controller.Instance().SubscribeToInsert(CallBackMission);
         }
 
         async void SpawnMissions()

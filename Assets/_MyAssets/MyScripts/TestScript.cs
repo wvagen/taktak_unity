@@ -192,26 +192,34 @@ namespace com.mkadmi
 
         public void GenerateRandomMission()
         {
-            Company_Model company_Model = new Company_Model();
-            userName = GenerateRandomWord(5);
-            missionDesc = userName = GenerateRandomWord(25);
-            starsNote = UnityEngine.Random.Range(0, 5);
-            userLevelAmount = UnityEngine.Random.Range(0, 100);
-            rewardCoins = UnityEngine.Random.Range(10, 100);
-            expAmount = UnityEngine.Random.Range(10, 100);
-            committers = UnityEngine.Random.Range(0, 100);
-            timeSeconds = UnityEngine.Random.Range(10, 3600);
-            profilePic = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
+            //To get random Users ID
+            int randomLengthCommitters = UnityEngine.Random.Range(10, 100);
+            string[] randomCommittersID = new string[randomLengthCommitters];
+            for (int i = 0; i < randomLengthCommitters; i++)
+            {
+                randomCommittersID[i] = GenerateRandomWord(5);
+            }
 
-            company_Model.CompanyName = userName;
-            company_Model.XpPoints = (ulong) userLevelAmount;
-            company_Model.Rating = (ulong)starsNote;
-            company_Model.CompanySprite = profilePic;
+            //End of gettings random users IDs
+
+            Company_Model company_Model = new Company_Model();
+            company_Model.CompanyName = GenerateRandomWord(5);
+            company_Model.XpPoints = (ulong)UnityEngine.Random.Range(0, 100);
+            company_Model.Rating = (ulong)UnityEngine.Random.Range(0, 5);
+            company_Model.CompanySprite = randomPics[UnityEngine.Random.Range(0, randomPics.Count)];
+
+            MissionLive_Model missionLiveModel = new MissionLive_Model();
+
+            missionLiveModel.RewardVirtCoins = UnityEngine.Random.Range(10, 100);
+            missionLiveModel.Deadline = DateTime.Today.AddDays(2);
+            missionLiveModel.RewardXp = UnityEngine.Random.Range(10, 100);
+            missionLiveModel.CommittersId = randomCommittersID;
+            missionLiveModel.ItemPrice = UnityEngine.Random.Range(0.1f, 30f);
+            missionLiveModel.Title = GenerateRandomWord(5);
 
             MissionLive_Widget missionLive = Instantiate(missionLiveGO, missionLiveLocation).GetComponent<MissionLive_Widget>();
-            missionLive.Set_Profile(company_Model);
-            missionLive.Set_Timer(timeSeconds);
-            missionLive.Set_Mission_Props(missionDesc, rewardCoins, expAmount, committers);
+            missionLive.Set_Company_Profile(company_Model);
+            missionLive.Set_Mission_Props(missionLiveModel);
         }
 
         static string GenerateRandomWord(int maxLength)
