@@ -10,7 +10,7 @@ namespace com.mkadmi
     public class Company_Model : BaseModel
     {
         [PrimaryKey("id", false)]
-        public string Id { get; set; }
+        public long Id { get; set; }
 
         [Column("number")]
         public long Number { get; set; }
