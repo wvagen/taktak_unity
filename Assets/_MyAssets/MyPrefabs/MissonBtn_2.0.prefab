@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 3956527590074515773}
   - component: {fileID: 6045527675454861667}
   - component: {fileID: 1341336061681499149}
-  - component: {fileID: 3600470584726211499}
+  - component: {fileID: 4169464810604658131}
   m_Layer: 0
   m_Name: CompanyPanel
   m_TagString: Untagged
@@ -498,7 +498,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3600470584726211499
+--- !u!114 &4169464810604658131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -507,11 +507,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 799041693471936837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6ad179a6e5ff4fdc8ef3a602c2d5253, type: 3}
+  m_Script: {fileID: 11500000, guid: aecb359fe471aa94faf5c3483270aeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _UserNameTxt: {fileID: 1296482940287441608}
-  _UserLevelTxt: {fileID: 13200886483750515}
+  _CompanyNameTxt: {fileID: 1296482940287441608}
+  _CompanyLevelTxt: {fileID: 13200886483750515}
   _StarsImgs:
   - {fileID: 6177829332881301024}
   - {fileID: 587153178998488025}
@@ -4221,7 +4221,7 @@ MonoBehaviour:
   _RewardExpTxt: {fileID: 5431783378989239866}
   _CommittersTxt: {fileID: 8037425132824056231}
   _MissionDescription: {fileID: 7391822392504696660}
-  _MyUserWidget: {fileID: 3600470584726211499}
+  _MyCompanyWidget: {fileID: 4169464810604658131}
   _TimeSlider: {fileID: 3105065333777368277}
   _SliderFillImg: {fileID: 2317994540882071481}
   _sliderColors:
