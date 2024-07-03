@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Postgrest.Attributes;
 using Postgrest.Models;
@@ -46,6 +47,9 @@ namespace com.mkadmi
         public DateTime? UpdatedAt { get; set; }
 
         public Sprite CompanySprite{ get; set; }
+
+        [Reference(typeof(MissionLive_Model),foreignKey: "user_id")]
+        public List<MissionLive_Model> LiveMissions { get; set; }
 
         public Company_Model()
         {
