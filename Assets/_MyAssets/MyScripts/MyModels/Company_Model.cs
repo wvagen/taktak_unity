@@ -47,9 +47,8 @@ namespace com.mkadmi
         public DateTime? UpdatedAt { get; set; }
 
         public Sprite CompanySprite{ get; set; }
-
-        [Reference(typeof(MissionLive_Model),foreignKey: "user_id")]
-        public List<MissionLive_Model> LiveMissions { get; set; }
+        
+        public List<MissionLive_Model> LiveMissions { get; set; } = new List<MissionLive_Model>();
 
         public Company_Model()
         {

@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using com.mkadmi;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using UnityEngine;
-using static Supabase.Realtime.PostgresChanges.PostgresChangesOptions;
 
-public class JointModels_Controller : MonoBehaviour
+public class JointModels_Controller
 {
     static JointModels_Controller _instance;
 

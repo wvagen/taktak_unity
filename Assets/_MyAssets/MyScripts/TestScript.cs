@@ -101,6 +101,11 @@ namespace com.mkadmi
             }
         }
 
+        public async void FetchCompanies()
+        {
+            await Company_Controller.Instance().GetAllCompanies();
+        }
+
         private void Update()
         {
             if (canFetchFakeData)
