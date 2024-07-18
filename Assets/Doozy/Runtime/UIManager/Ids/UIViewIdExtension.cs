@@ -35,7 +35,8 @@ namespace Doozy.Runtime.UIManager
         public enum Auth
         {
             SignInEmail,
-            SignInOptions
+            SignInOptions,
+            SignUpEmailPart1
         }
 
         public enum Home
