@@ -19,6 +19,8 @@ MonoBehaviour:
     - Category: Auth
       Name: EmailBtn
     - Category: Auth
+      Name: EmailSignUp
+    - Category: Auth
       Name: FbBtn
     - Category: Auth
       Name: GoogleBtn
