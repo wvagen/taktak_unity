@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_MyAssets/MyScenes/Client_0_AuthScene.unity
     guid: 295c48220af574658a30bfa95afd4c4a
   - enabled: 1
+    path: Assets/Plugins/VoxelBusters/EssentialKit/Examples/Scenes/MediaServicesDemo.unity
+    guid: ec02001bcc2b04074b0ba9b48befacd2
+  - enabled: 1
     path: Assets/_MyAssets/MyScenes/Client_1_MainScene.unity
     guid: cde6967e1b1e24208bda601dc7a44258
   m_configObjects: {}

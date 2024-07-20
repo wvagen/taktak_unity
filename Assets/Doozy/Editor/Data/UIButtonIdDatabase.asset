@@ -25,6 +25,8 @@ MonoBehaviour:
     - Category: Auth
       Name: GoogleBtn
     - Category: Auth
+      Name: mediascenebtn
+    - Category: Auth
       Name: SignUpEmailConfirm
     - Category: Auth
       Name: SignUpEmailPart0SignUp
