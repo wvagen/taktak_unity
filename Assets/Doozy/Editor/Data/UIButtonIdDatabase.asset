@@ -24,6 +24,16 @@ MonoBehaviour:
       Name: FbBtn
     - Category: Auth
       Name: GoogleBtn
+    - Category: Auth
+      Name: SignUpEmailConfirm
+    - Category: Auth
+      Name: SignUpEmailPart0SignUp
+    - Category: Auth
+      Name: SignUpEmailPart1Continue
+    - Category: Auth
+      Name: SignUpEmailPart2Continue
+    - Category: Auth
+      Name: SignUpEmailPart3Continue
     - Category: Demo
       Name: Back
     - Category: Demo

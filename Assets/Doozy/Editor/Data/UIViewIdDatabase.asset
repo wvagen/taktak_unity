@@ -20,6 +20,10 @@ MonoBehaviour:
       Name: SignInOptions
     - Category: Auth
       Name: SignUpEmailPart1
+    - Category: Auth
+      Name: SignUpEmailPart2
+    - Category: Auth
+      Name: SignUpEmailPart3
     - Category: Home
       Name: HistoryAndStats
     - Category: Home

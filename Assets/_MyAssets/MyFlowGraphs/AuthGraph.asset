@@ -72,8 +72,9 @@ MonoBehaviour:
     PortId: ac9ef655-24ff-4dc4-b543-cbe1cd57028d
     Direction: 1
     Capacity: 0
-    Connections: []
-    Value: '{"Trigger":0,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"None","Name":"None","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    Connections:
+    - 608c0c0d-2f2e-4752-b5d5-da342600b372
+    Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Auth","Name":"SignUpEmailPart0SignUp","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     CanBeDeleted: 0
@@ -85,7 +86,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 407.86957, y: -31.026098}
+  Position: {x: 413.50003, y: -36.999996}
   OnEnterShowViews:
   - Id:
       Category: Auth
@@ -100,7 +101,127 @@ MonoBehaviour:
       Name: SignInOptions
       Custom: 0
     Mode: 0
-  OnEnterHideAllViews: 0
+  OnEnterHideAllViews: 1
+  OnExitHideAllViews: 0
+--- !u!114 &-2664919350891235281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c01f9a7d07f5c04a9f277379e94a10b, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  FlowGraphId: 46251a49-e6af-470e-b227-18df1905f909
+  NodeId: 9e4ce90d-4fb1-4106-95f9-d42559408ea7
+  NodeType: 0
+  NodeName: SignUpEmailPart1
+  NodeDescription: 
+  InputPorts:
+  - NodeId: 9e4ce90d-4fb1-4106-95f9-d42559408ea7
+    PortId: 608c0c0d-2f2e-4752-b5d5-da342600b372
+    Direction: 0
+    Capacity: 1
+    Connections:
+    - ac9ef655-24ff-4dc4-b543-cbe1cd57028d
+    Value: '{"CanGoBack":true}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  OutputPorts:
+  - NodeId: 9e4ce90d-4fb1-4106-95f9-d42559408ea7
+    PortId: 7f8e3b4a-9696-4bba-b22e-52dec86e5fc0
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - 4925b86a-3639-42b0-a92a-60e9961231e1
+    Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Auth","Name":"SignUpEmailPart1Continue","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  RunUpdate: 0
+  RunFixedUpdate: 0
+  RunLateUpdate: 0
+  NodeState: 0
+  CanBeDeleted: 1
+  Passthrough: 0
+  ClearGraphHistory: 0
+  Position: {x: 788, y: -51.500004}
+  OnEnterShowViews:
+  - Id:
+      Category: Auth
+      Name: SignUpEmailPart1
+      Custom: 0
+    Mode: 0
+  OnEnterHideViews: []
+  OnExitShowViews: []
+  OnExitHideViews: []
+  OnEnterHideAllViews: 1
+  OnExitHideAllViews: 0
+--- !u!114 &-1825224353496144068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c01f9a7d07f5c04a9f277379e94a10b, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  FlowGraphId: 46251a49-e6af-470e-b227-18df1905f909
+  NodeId: e35863cf-65dd-4408-a2f7-30e7837d6ddf
+  NodeType: 0
+  NodeName: SignUpEmailPart2
+  NodeDescription: 
+  InputPorts:
+  - NodeId: e35863cf-65dd-4408-a2f7-30e7837d6ddf
+    PortId: 4925b86a-3639-42b0-a92a-60e9961231e1
+    Direction: 0
+    Capacity: 1
+    Connections:
+    - 7f8e3b4a-9696-4bba-b22e-52dec86e5fc0
+    Value: '{"CanGoBack":true}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  OutputPorts:
+  - NodeId: e35863cf-65dd-4408-a2f7-30e7837d6ddf
+    PortId: 721b256a-6d38-4d7e-aacf-8e9c94860c0f
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - fa37bfb6-a8c3-4975-b899-018ea73d50f4
+    Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Auth","Name":"SignUpEmailPart3Continue","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  RunUpdate: 0
+  RunFixedUpdate: 0
+  RunLateUpdate: 0
+  NodeState: 0
+  CanBeDeleted: 1
+  Passthrough: 0
+  ClearGraphHistory: 0
+  Position: {x: 1027.5, y: 78.99999}
+  OnEnterShowViews:
+  - Id:
+      Category: Auth
+      Name: SignUpEmailPart2
+      Custom: 0
+    Mode: 0
+  OnEnterHideViews: []
+  OnExitShowViews: []
+  OnExitHideViews: []
+  OnEnterHideAllViews: 1
   OnExitHideAllViews: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -114,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: AuthGraph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: 222.5, y: 120.5, z: 0}
-  EditorScale: {x: 1.15, y: 1.15, z: 1}
+  EditorPosition: {x: 7.5, y: 107, z: 0}
+  EditorScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Id: 46251a49-e6af-470e-b227-18df1905f909
   GraphName: Flow Graph
   GraphDescription: 
@@ -143,8 +264,120 @@ MonoBehaviour:
   - {fileID: -8845411640284815017}
   - {fileID: 6632066039420615547}
   - {fileID: -7258745463952754012}
+  - {fileID: -2664919350891235281}
+  - {fileID: -1825224353496144068}
+  - {fileID: 1818487832276970030}
+  - {fileID: 2200750820272311442}
   RootNode: {fileID: -8845411640284815017}
   ActiveNode: {fileID: 0}
+--- !u!114 &1818487832276970030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c01f9a7d07f5c04a9f277379e94a10b, type: 3}
+  m_Name: UI
+  m_EditorClassIdentifier: 
+  FlowGraphId: 46251a49-e6af-470e-b227-18df1905f909
+  NodeId: f3723285-70dc-40f6-884f-c3021e0d23b3
+  NodeType: 0
+  NodeName: SignUpEmailPart3
+  NodeDescription: 
+  InputPorts:
+  - NodeId: f3723285-70dc-40f6-884f-c3021e0d23b3
+    PortId: fa37bfb6-a8c3-4975-b899-018ea73d50f4
+    Direction: 0
+    Capacity: 1
+    Connections:
+    - 721b256a-6d38-4d7e-aacf-8e9c94860c0f
+    Value: '{"CanGoBack":true}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  OutputPorts:
+  - NodeId: f3723285-70dc-40f6-884f-c3021e0d23b3
+    PortId: 114b5bad-1181-4817-a061-98271ebba378
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - 89c917d2-db83-4a71-b8e7-ed356f30bd52
+    Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Auth","Name":"SignUpEmailConfirm","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
+    ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
+      Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  RunUpdate: 0
+  RunFixedUpdate: 0
+  RunLateUpdate: 0
+  NodeState: 0
+  CanBeDeleted: 1
+  Passthrough: 0
+  ClearGraphHistory: 0
+  Position: {x: 1352, y: 130.5}
+  OnEnterShowViews:
+  - Id:
+      Category: Auth
+      Name: SignUpEmailPart3
+      Custom: 0
+    Mode: 0
+  OnEnterHideViews: []
+  OnExitShowViews: []
+  OnExitHideViews: []
+  OnEnterHideAllViews: 1
+  OnExitHideAllViews: 0
+--- !u!114 &2200750820272311442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d26771609544c5348b153b61330ee08f, type: 3}
+  m_Name: Pivot
+  m_EditorClassIdentifier: 
+  FlowGraphId: 46251a49-e6af-470e-b227-18df1905f909
+  NodeId: 5a0da637-038b-4420-8c31-ed0ec9ffd557
+  NodeType: 0
+  NodeName: Pivot
+  NodeDescription: 
+  InputPorts:
+  - NodeId: 5a0da637-038b-4420-8c31-ed0ec9ffd557
+    PortId: 89c917d2-db83-4a71-b8e7-ed356f30bd52
+    Direction: 0
+    Capacity: 1
+    Connections:
+    - 114b5bad-1181-4817-a061-98271ebba378
+    Value: 
+    ValueTypeQualifiedName: 
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  OutputPorts:
+  - NodeId: 5a0da637-038b-4420-8c31-ed0ec9ffd557
+    PortId: 5923d5b0-8f84-48bd-8abc-68720bdacb4b
+    Direction: 1
+    Capacity: 0
+    Connections:
+    - f021bc8e-dc0f-443e-96df-3129c98fccd1
+    Value: 
+    ValueTypeQualifiedName: 
+    CanBeDeleted: 0
+    CanBeReordered: 0
+  RunUpdate: 0
+  RunFixedUpdate: 0
+  RunLateUpdate: 0
+  NodeState: 0
+  CanBeDeleted: 1
+  Passthrough: 1
+  ClearGraphHistory: 0
+  Position: {x: 1074.687, y: 260.68698}
+  PivotOrientation: 1
 --- !u!114 &6632066039420615547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,6 +402,7 @@ MonoBehaviour:
     Capacity: 1
     Connections:
     - 81fe5e4f-905e-42df-946c-8526ae67babe
+    - 5923d5b0-8f84-48bd-8abc-68720bdacb4b
     Value: '{"CanGoBack":false}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -193,7 +427,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 190.00002, y: -16.582615}
+  Position: {x: 190.00002, y: -36.957848}
   OnEnterShowViews:
   - Id:
       Category: Auth
@@ -202,11 +436,6 @@ MonoBehaviour:
     Mode: 0
   OnEnterHideViews: []
   OnExitShowViews: []
-  OnExitHideViews:
-  - Id:
-      Category: Auth
-      Name: SignInOptions
-      Custom: 0
-    Mode: 0
-  OnEnterHideAllViews: 0
+  OnExitHideViews: []
+  OnEnterHideAllViews: 1
   OnExitHideAllViews: 0
