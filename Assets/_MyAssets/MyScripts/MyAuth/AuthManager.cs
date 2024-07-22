@@ -24,6 +24,9 @@ namespace com.mkadmi {
         [SerializeField]
         private ToggleGroup _toggleGroup;
 
+        [SerializeField]
+        private Default_Options maleDefaultOptions, femaleDefaultOptions;
+
         public async void SignIn_Email()
         {
             if (!isEmailSignInEmpty(_emailField)) return;
@@ -36,7 +39,7 @@ namespace com.mkadmi {
                 email = _emailField.text,
                 password = _passField.text
             };
-            ApiResponse response = await ApiClient.Instance.PostAsync(Config.API_AUTH_URL + "sign_in_email_pass", request);
+            ApiResponse response = await ApiClient.Instance.PostAsync(Config.API_AUTH_URL + "sign_in_email", request);
             Debug.Log("POST Response: " + response.data);
             Debug.Log("POST Response Code: " + response.code);
             AlertCanvas.Instance().Loading(false);
@@ -61,15 +64,36 @@ namespace com.mkadmi {
             if (!IsPassSignInEmpty(_signUp_passField)) return;
 
             AlertCanvas.Instance().Loading(true);
-            Supabase.Gotrue.Session session = await SB_Client.Instance().Auth.SignIn(_emailField.text, _passField.text);
-            Debug.Log(session.User.Id);
-            UserIdMap_Model userMap = await UserIdMap_Controller.Instance().GetUserByUserCredential(session.User.Email);
-            User_Model user = await UserController.Instance().GetUserById(session.User.Id);
-            Debug.Log(user.ToJson());
-            User.Instance().SetMe(user);
+            bool isMale = _toggleGroup.GetFirstActiveToggle().name == "MaleToggle";
+            SignUpEmailVM request = new SignUpEmailVM
+            {
+                email = _signUp_emailField.text,
+                password = _signUp_passField.text,
+                user_name = (isMale ? maleDefaultOptions.userName_prefix[Random.Range(0, maleDefaultOptions.userName_prefix.Length)] : femaleDefaultOptions.userName_prefix[Random.Range(0, femaleDefaultOptions.userName_prefix.Length)]) + "_" + Tools.GenerateShortId(),
+                name = isMale ? maleDefaultOptions.name[Random.Range(0, maleDefaultOptions.name.Length)] : femaleDefaultOptions.name[Random.Range(0, femaleDefaultOptions.name.Length)],
+                surname = isMale ? maleDefaultOptions.surname[Random.Range(0, maleDefaultOptions.surname.Length)] : femaleDefaultOptions.surname[Random.Range(0, femaleDefaultOptions.surname.Length)],
+                birthdate = isMale ? maleDefaultOptions.birthDate[Random.Range(0, maleDefaultOptions.birthDate.Length)] : femaleDefaultOptions.birthDate[Random.Range(0, femaleDefaultOptions.birthDate.Length)],
+                oauth_id = _signUp_emailField.text,
+                phone_number = isMale ? maleDefaultOptions.phoneNumber[Random.Range(0, maleDefaultOptions.birthDate.Length)] : femaleDefaultOptions.phoneNumber[Random.Range(0, femaleDefaultOptions.phoneNumber.Length)],
+                photo_path = isMale ? maleDefaultOptions.photoPath[Random.Range(0, maleDefaultOptions.photoPath.Length)] : femaleDefaultOptions.photoPath[Random.Range(0, femaleDefaultOptions.photoPath.Length)],
+                gender = isMale ? "MALE" : "FEMALE",
+            };
+            ApiResponse response = await ApiClient.Instance.PostAsync(Config.API_AUTH_URL + "sign_up_email", request);
+            Debug.Log("POST Response: " + response.data);
+            Debug.Log("POST Response Code: " + response.code);
             AlertCanvas.Instance().Loading(false);
-            AlertCanvas.Instance().Load_Scene(UserSettings.SCENE_MAIN_MENU);
+
+            //AlertCanvas.Instance().Loading(true);
+            //Supabase.Gotrue.Session session = await SB_Client.Instance().Auth.SignIn(_emailField.text, _passField.text);
+            //Debug.Log(session.User.Id);
+            //UserIdMap_Model userMap = await UserIdMap_Controller.Instance().GetUserByUserCredential(session.User.Email);
+            //User_Model user = await UserController.Instance().GetUserById(session.User.Id);
+            //Debug.Log(user.ToJson());
+            //User.Instance().SetMe(user);
+            //AlertCanvas.Instance().Loading(false);
+            //AlertCanvas.Instance().Load_Scene(UserSettings.SCENE_MAIN_MENU);
         }
+
 
         bool isEmailSignInEmpty(TMP_InputField emailField)
         {

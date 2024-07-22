@@ -31,6 +31,20 @@ namespace com.mkadmi
             return reachedLevel;
         }
 
+        public static string GenerateShortId()
+        {
+            Guid guid = Guid.NewGuid();
+            string shortId = Convert.ToBase64String(guid.ToByteArray());
+
+            // Replace characters to make it URL friendly
+            shortId = shortId.Replace("/", "_").Replace("+", "-");
+
+            // Remove the trailing equal signs
+            shortId = shortId.Substring(0, shortId.Length - 10);
+
+            return shortId;
+        }
+
         public static async Task<Sprite> LoadSpriteAsync(string uri)
         {
             using (UnityWebRequest request = UnityWebRequestTexture.GetTexture(uri))
