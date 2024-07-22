@@ -1,8 +1,11 @@
 ﻿<linker>
+  <assembly fullname="VoxelBusters.EssentialKit">
+    <type fullname="VoxelBusters.EssentialKit.AddressBookCore.NullAddressBookInterface" preserve="all" />
+    <type fullname="VoxelBusters.EssentialKit.BillingServicesCore.NullBillingServicesInterface" preserve="all" />
+    <type fullname="VoxelBusters.EssentialKit.CloudServicesCore.NullCloudServicesInterface" preserve="all" />
+    <type fullname="VoxelBusters.EssentialKit.DeepLinkServicesCore.NullDeepLinkServicesInterface" preserve="all" />
+  </assembly>
   <assembly fullname="VoxelBusters.EssentialKit.iOSModule">
-    <namespace fullname="VoxelBusters.EssentialKit.AddressBookCore.iOS" preserve="all" />
-    <namespace fullname="VoxelBusters.EssentialKit.BillingServicesCore.iOS" preserve="all" />
-    <namespace fullname="VoxelBusters.EssentialKit.CloudServicesCore.iOS" preserve="all" />
     <namespace fullname="VoxelBusters.EssentialKit.GameServicesCore.iOS" preserve="all" />
     <namespace fullname="VoxelBusters.EssentialKit.MediaServicesCore.iOS" preserve="all" />
     <namespace fullname="VoxelBusters.EssentialKit.NativeUICore.iOS" preserve="all" />
@@ -11,6 +14,9 @@
     <namespace fullname="VoxelBusters.EssentialKit.SharingServicesCore.iOS" preserve="all" />
     <namespace fullname="VoxelBusters.EssentialKit.WebViewCore.iOS" preserve="all" />
     <namespace fullname="VoxelBusters.EssentialKit.ExtrasCore.iOS" preserve="all" />
-    <namespace fullname="VoxelBusters.EssentialKit.DeepLinkServicesCore.iOS" preserve="all" />
+    <type fullname="VoxelBusters.EssentialKit.AddressBookCore.iOS.AddressBookInterface" preserve="nothing" />
+    <type fullname="VoxelBusters.EssentialKit.BillingServicesCore.iOS.BillingServicesInterface" preserve="nothing" />
+    <type fullname="VoxelBusters.EssentialKit.CloudServicesCore.iOS.CloudServicesInterface" preserve="nothing" />
+    <type fullname="VoxelBusters.EssentialKit.DeepLinkServicesCore.iOS.DeepLinkServicesInterface" preserve="nothing" />
   </assembly>
 </linker>

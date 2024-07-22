@@ -137,8 +137,7 @@ MonoBehaviour:
     PortId: 7f8e3b4a-9696-4bba-b22e-52dec86e5fc0
     Direction: 1
     Capacity: 0
-    Connections:
-    - 4925b86a-3639-42b0-a92a-60e9961231e1
+    Connections: []
     Value: '{"Trigger":2,"TimeDelay":3.0,"SignalPayload":{"StreamId":{"Category":"None","Name":"None","Custom":false},"SignalValueType":0,"IntegerValue":0,"BooleanValue":false,"FloatValue":0.0,"StringValue":"","ColorValue":{"r":0.0,"g":0.0,"b":0.0,"a":0.0},"Vector2Value":{"x":0.0,"y":0.0},"Vector3Value":{"x":0.0,"y":0.0,"z":0.0},"Vector4Value":{"x":0.0,"y":0.0,"z":0.0,"w":0.0}},"ButtonId":{"Category":"Auth","Name":"SignUpEmailPart1Continue","Custom":false},"ToggleId":{"Category":"None","Name":"None","Custom":false},"CommandToggle":2,"ViewId":{"Category":"None","Name":"None","Custom":false},"CommandShowHide":0}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.UIOutputPortData,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -151,7 +150,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 788, y: -51.500004}
+  Position: {x: 788, y: -88.5}
   OnEnterShowViews:
   - Id:
       Category: Auth
@@ -185,8 +184,7 @@ MonoBehaviour:
     PortId: 4925b86a-3639-42b0-a92a-60e9961231e1
     Direction: 0
     Capacity: 1
-    Connections:
-    - 7f8e3b4a-9696-4bba-b22e-52dec86e5fc0
+    Connections: []
     Value: '{"CanGoBack":true}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
@@ -211,7 +209,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 1027.5, y: 78.99999}
+  Position: {x: 1221.6869, y: 27.500015}
   OnEnterShowViews:
   - Id:
       Category: Auth
@@ -235,8 +233,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02761efe598a45c98fa1baf4d446c6a7, type: 3}
   m_Name: AuthGraph
   m_EditorClassIdentifier: 
-  EditorPosition: {x: -1103, y: -69.5, z: 0}
-  EditorScale: {x: 1.15, y: 1.15, z: 1}
+  EditorPosition: {x: 290, y: 114.5, z: 0}
+  EditorScale: {x: 0.57175326, y: 0.57175326, z: 1}
   Id: 46251a49-e6af-470e-b227-18df1905f909
   GraphName: Flow Graph
   GraphDescription: 
@@ -316,7 +314,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 1
   ClearGraphHistory: 0
-  Position: {x: 1645.1305, y: 95.000015}
+  Position: {x: 1839.1869, y: 43.500015}
   GetSceneBy: 0
   LoadSceneMode: 0
   AllowSceneActivation: 1
@@ -389,7 +387,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 0
   ClearGraphHistory: 0
-  Position: {x: 1352, y: 133.5}
+  Position: {x: 1546.1869, y: 82.000046}
   OnEnterShowViews:
   - Id:
       Category: Auth
@@ -434,8 +432,7 @@ MonoBehaviour:
     PortId: 5923d5b0-8f84-48bd-8abc-68720bdacb4b
     Direction: 1
     Capacity: 0
-    Connections:
-    - f021bc8e-dc0f-443e-96df-3129c98fccd1
+    Connections: []
     Value: 
     ValueTypeQualifiedName: 
     CanBeDeleted: 0
@@ -447,7 +444,7 @@ MonoBehaviour:
   CanBeDeleted: 1
   Passthrough: 1
   ClearGraphHistory: 0
-  Position: {x: 1074.687, y: 260.68698}
+  Position: {x: 1386.5002, y: 323.77267}
   PivotOrientation: 1
 --- !u!114 &6632066039420615547
 MonoBehaviour:
@@ -473,7 +470,6 @@ MonoBehaviour:
     Capacity: 1
     Connections:
     - 81fe5e4f-905e-42df-946c-8526ae67babe
-    - 5923d5b0-8f84-48bd-8abc-68720bdacb4b
     Value: '{"CanGoBack":false}'
     ValueTypeQualifiedName: Doozy.Runtime.UIManager.Nodes.PortData.GoBackInputPortData,
       Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
