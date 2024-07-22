@@ -2,6 +2,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Supabase.Storage;
 using UnityEngine;
 
 namespace com.mkadmi
@@ -66,7 +67,7 @@ namespace com.mkadmi
 
         public async Task<ApiResponse> PostAsync<T>(string url, T payload)
         {
-            Debug.LogFormat("URL{0} : PayLoad:{1}", url,payload);
+            Debug.LogFormat("URL: {0} : PayLoad:{1}", url,payload);
             return await SendAsync(HttpMethod.Post, url, payload);
         }
 
@@ -109,9 +110,7 @@ namespace com.mkadmi
         {
             try
             {
-                Debug.Log("PayLoad before converting: " + payload); 
                 string jsonData = JsonUtility.ToJson(payload);
-                Debug.Log("jsonData: " + jsonData);
                 HttpContent content = new StringContent(jsonData, Encoding.UTF8, "application/json");
                 HttpRequestMessage request = new HttpRequestMessage(method, url) { Content = content };
                 HttpResponseMessage response = await _httpClient.SendAsync(request);
@@ -119,11 +118,15 @@ namespace com.mkadmi
                 if (response.IsSuccessStatusCode)
                 {
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    return JsonUtility.FromJson<ApiResponse>(jsonResponse);
+                    ApiResponse apiRes = JsonUtility.FromJson<ApiResponse>(jsonResponse);
+                    apiRes.data = jsonResponse;
+
+                    return apiRes;
                 }
                 else
                 {
                     string errorResponse = await response.Content.ReadAsStringAsync();
+                    AlertCanvas.Instance().ShowErrorPanel("Error", errorResponse);
                     Debug.LogError($"Error: {response.StatusCode}, Details: {errorResponse}");
                     return new ApiResponse { code = (int)response.StatusCode, message = errorResponse };
                 }
@@ -131,6 +134,7 @@ namespace com.mkadmi
             catch (Exception e)
             {
                 Debug.LogError($"Exception: {e.Message}");
+                AlertCanvas.Instance().ShowErrorPanel("Error", e.Message);
                 return new ApiResponse { code = 500, message = e.Message };
             }
         }
